@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@import "/css/zero_style.css";
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+body {
+  font-family: "Inter";
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+._container {
+  max-width: 1430px;
+  margin: 0 auto;
+}
+
+.header__container {
+  display: flex;
+  background: #fff;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+}
+
+.header__main {
+  padding-left: 1.5%;
+  display: flex;
+  gap: 20px;
+}
+.header__main .header__logo {
+  font-size: 23px;
+  font-weight: 700;
+}
+.header__main .header__text-ul {
+  align-self: center;
+  color: rgba(39, 41, 55, 0.75);
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  opacity: 0.9;
+}
+.header__main .header__item::before {
+  position: relative;
+  margin-right: 5px;
+  content: "•";
+  opacity: 0.6;
+}
+
+.header__nav {
+  font-weight: 600;
+}
+.header__nav .header__menu {
+  display: flex;
+  gap: 40px;
+}
+.header__nav .menu {
+  color: #272937;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.6px;
+}
+.header__nav .menu__item:last-child {
+  padding-right: -15px;
+  margin-right: 15px;
+}
+.header__nav .menu__link {
+  color: inherit;
+}
+.header__nav .menu__link_with-point::after {
+  position: relative;
+  margin-right: 5px;
+  content: "•";
+  color: red;
+  top: -6px;
+  left: 1px;
+}
+.header__nav .menu__link_bold {
+  color: #7000FE;
+}
