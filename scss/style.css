@@ -104,7 +104,7 @@ body {
     margin: 0 auto;
   }
   .header__main {
-    margin: 0 144px 0 0px;
+    margin: 0 183px 0 0px;
   }
   .header__menu {
     gap: 30px;
@@ -160,6 +160,64 @@ body {
     width: 17%;
   }
 }
+/*---PAGE------*/
+.page__wireframes {
+  background: #F2F2F2;
+}
+
+/*---WIREFRAMES------*/
+.wireframes__container {
+  display: flex;
+}
+
+.wireframes__main {
+  max-width: 451px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wirefraimes__text-block {
+  margin-top: 50%;
+  flex: 1 1 auto;
+}
+
+.wireframes__title {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 72px;
+  line-height: 72px;
+  font-weight: 600;
+  letter-spacing: -3px;
+}
+
+.wireframes__text {
+  margin-bottom: 24px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.8px;
+}
+
+.wireframes__buttons {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.6px;
+}
+
+.wireframes__link {
+  color: inherit;
+}
+
+.wireframes__link_purple {
+  color: #fff;
+}
+
 /*-----WIREFRAMES-------------*/
 /*.wireframes{
     background: #F0F0F1;
