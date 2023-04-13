@@ -18,11 +18,17 @@ body {
 }
 
 /*----HEADER------------------------------------*/
-.header__container {
-  display: flex;
-  background: #fff;
+.header__row {
   height: 60px;
-  align-items: center;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.header__container {
+  position: fixed;
+  background: #fff;
+  display: flex;
   font-size: 15px;
   line-height: 1.5;
   letter-spacing: -0.035em;
