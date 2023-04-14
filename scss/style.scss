@@ -23,6 +23,7 @@ body{
     background: #fff;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .header__container {
     position: fixed;
@@ -140,15 +141,16 @@ body{
         max-width: 769px;
     }
     .header__main{
-        margin: 0 auto 0 0;
+        margin: 0 10px 0 0;
     }
     .header__menu{
         flex-wrap: wrap;
         gap:20px;
     }
     .menu{
-        line-height: 10px;
+        line-height: 40px;
     }
+    
     .link__img{
         height: 70%;
         width: 15%;
@@ -194,7 +196,7 @@ body{
 }
 .wireframes__main {  
     //align-self: center;
-    max-width: 451px;
+    
     display: flex;
     flex-direction: column;
 }
@@ -202,41 +204,177 @@ body{
     margin-top: 50%;
     flex: 1 1 auto;
 }
+
 .wireframes__title {
-    margin-bottom: 24px;
+    //margin-bottom: 24px;
 }
 .title {
     font-size: 72px;
-    line-height: 72px;
+    line-height: 100%;
     font-weight: 600;
     letter-spacing: -3px;
 
 }
 .wireframes__text {
-    margin-bottom: 24px;
+    //margin-bottom: 24px;
+}
+.wirefraimes__text-block>*:not(:last-child){
+    margin: 0 0 24px 0;
 }
 .text {
     font-weight: 400;
     font-size: 20px;
-    line-height: 28px;
+    line-height: calc(28/20*100%);
     letter-spacing: -0.8px;
 }
 .wireframes__buttons {
     font-weight: 600;
     font-size: 16px;
-    line-height: 24px;
+    line-height: calc(24/26*100%);
     letter-spacing: -0.6px;
-    
+
 }
 .wireframes__link {
     color: inherit;
+    min-width: 160px;
+    min-height: 48px;
+    padding: 0px 4px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: #fff;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 .wireframes__link_purple {
+    padding: 0px 17px;
     color:#fff;
+    background: #7000FE;
+    border: none;
+    margin: 0 20px 0 0; 
+}
+.wireframes__link-svg{
+    color: #fff;
 }
 .wireframes__note {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -.035em;
 }
 .wireframes__img {
+}
+@media(max-width: 1428px){
+    .wireframes__container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .wireframes__main{
+        margin-top: 8%;
+        max-width: 670px;
+        text-align: center;
+    }
+    .wirefraimes__text-block{
+        margin-top: 0;
+        //max-width: 85%;
+    }
+    .wireframes__text{
+        font-size: 175%;
+    }
+    .wireframes__main>*{
+        margin-bottom: 30px;
+    }
+}
+@media(max-width: 1148px){
+    .wireframes__main{
+        margin-top: 8%;
+        max-width: 670px;
+        text-align: center;
+    }
+    .wirefraimes__text-block{
+        margin-top: 0;
+        max-width: 80%;
+        align-self: center;
+        //max-width: 85%;
+    }
+    .wireframes__title{
+        font-size: 400%;
+    }
+    .wireframes__text{
+        font-size: 150%;
+    }
+}
+@media(max-width: 768px){
+    .wireframes__main{
+        margin-top: 8%;
+        max-width: 670px;
+        text-align: center;
+    }
+    .wirefraimes__text-block{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        max-width: 80%;
+        align-self: center;
+        //max-width: 85%;
+    }
+    .wireframes__title{
+        font-size: 400%;
+    }
+    .wireframes__text{
+        font-size: 150%;
+    }
+    .wireframes__buttons{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        
+    }
+    .wireframes__link{
+        flex: 1 1 100%;
+    }
+    .wireframes__link_purple{
+        margin-right: 0;
+    }
+    .wireframes__note {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: #969696;
+    }
+    .wireframes__note>img{
+        align-self: center;
+        max-width: 10%;
+        max-height: 100%;
+    }
+    .wireframes__img{
+        max-width: 100%;
+    }
+}
+@media(max-width: 5639px){
+    .wireframes__main{
+        margin-top: 8%;
+        max-width: 670px;
+        text-align: center;
+    }
+    .wirefraimes__text-block{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        max-width: 80%;
+        align-self: center;
+        //max-width: 85%;
+    }
+    .wireframes__title{
+        font-size: 250%;
+    }
+    .wireframes__text{
+        font-size: 110%;
+    }
+
+    
+    
 }
 /*-----WIREFRAMES-------------*/
 /*.wireframes{
