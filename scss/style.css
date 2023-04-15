@@ -3,11 +3,14 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 body {
   font-family: "Inter";
+  height: 100%;
 }
 
 .wrapper {
   min-height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 ._container {
@@ -168,6 +171,10 @@ body {
   }
 }
 /*---PAGE------*/
+.page {
+  flex: 1 1 auto;
+}
+
 .page__wireframes {
   background: #F2F2F2;
 }
@@ -188,22 +195,22 @@ body {
   padding: 40% 0;
 }
 
-.title {
+.wireframes__title {
   font-size: 72px;
   line-height: 100%;
   font-weight: 600;
   letter-spacing: -3px;
 }
 
-.wirefraimes__text-block > *:not(:last-child) {
-  margin: 0 0 24px 0;
-}
-
-.text {
+.wireframes__text {
   font-weight: 400;
   font-size: 20px;
   line-height: 140%;
   letter-spacing: -0.8px;
+}
+
+.wirefraimes__text-block > *:not(:last-child) {
+  margin: 0 0 24px 0;
 }
 
 .wireframes__buttons {
@@ -211,6 +218,7 @@ body {
   font-size: 16px;
   line-height: 92.3076923077%;
   letter-spacing: -0.6px;
+  display: flex;
 }
 
 .wireframes__link {
@@ -232,10 +240,6 @@ body {
   background: #7000FE;
   border: none;
   margin: 0 20px 0 0;
-}
-
-.wireframes__link-svg {
-  color: #fff;
 }
 
 .wireframes__note {
@@ -262,6 +266,9 @@ body {
   }
   .wireframes__main > * {
     margin-bottom: 30px;
+  }
+  .wireframes__buttons {
+    justify-content: center;
   }
 }
 @media (max-width: 1148px) {
@@ -346,4 +353,75 @@ body {
   .wireframes__text {
     font-size: 110%;
   }
+}
+/*---DESIGN---------------*/
+.title {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 107.1428571429%;
+  letter-spacing: -2px;
+  color: #272937;
+}
+
+.text {
+  font-size: 20px;
+  line-height: 140%;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  color: rgba(39, 41, 55, 0.75);
+}
+
+.design__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.design__main-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.design__text-block {
+  max-width: 1020px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.design__logo {
+  display: flex;
+  background: rgba(39, 41, 55, 0.05);
+  border-radius: 16px;
+  align-items: center;
+  padding: 0 12px 0 8px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  height: 32px;
+}
+
+.logo__icon {
+  margin: 0 6px 0 0;
+}
+
+.logo__text {
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.design__title {
+  margin-bottom: 32px;
+}
+
+.design__text {
+  max-width: 453px;
+  text-align: center;
+}
+
+/*---FOOTER---------------*/
+.footer {
+  background: #c3c1c1;
 }/*# sourceMappingURL=style.css.map */
