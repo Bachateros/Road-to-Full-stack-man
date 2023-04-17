@@ -1,0 +1,31 @@
+/*---COLORS---------------*/
+/*----------------------*/
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+._container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  box-sizing: content-box;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 107.1428571429%;
+  letter-spacing: -2px;
+  color: #272937;
+}
+
+.text {
+  font-size: 20px;
+  line-height: 140%;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  color: rgba(39, 41, 55, 0.75);
+}/*# sourceMappingURL=general_blocks.css.map */
