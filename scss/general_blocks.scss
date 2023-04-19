@@ -15,8 +15,9 @@ $MainColor: rgba(39, 41, 55, 0.75);
     box-sizing: content-box;
 }
 .text-block{
+    text-align: center;
     &__title{
-        font-size: 56px;
+        font-size: 60px;
         font-weight: 600;
         line-height: calc(60/56*100%);
         letter-spacing: -2px;
@@ -34,25 +35,22 @@ $MainColor: rgba(39, 41, 55, 0.75);
 @media(max-width: 1428px){
     .text-block{
         padding: 0;
-        &__text{
-            font-size: 175%;
-        }
     }
 }
-@media(max-width: 1148px){
+@media(max-width: 1149px){
     .text-block{
         margin-top: 0;
-        max-width: 80%;
+        //max-width: 80%;
         align-self: center;
         &__title{
-            font-size: 400%;
+            font-size: 350%;
         }
         &__text{
-            font-size: 150%;
+            font-size: 130%;
         }
     }
 }
-@media(max-width: 768px){
+@media(max-width: 769px){
     .text-block{
         display: flex;
         flex-direction: column;
@@ -60,10 +58,10 @@ $MainColor: rgba(39, 41, 55, 0.75);
         max-width: 80%;
         align-self: center;
         &__title{
-            font-size: 400%;
+            font-size: 32px;
         }
         &__text{
-            font-size: 150%;
+            font-size: 14px;
         }
     }
 }

@@ -13,12 +13,16 @@
 }
 .page__design {
 }
+.page__instructions {
+}
 /*----HEADER------------------------------------*/
 @import "/scss/header.css";
 /*---WIREFRAMES------*/
 @import "/scss/wireframes.css";
 /*---DESIGN---------------*/
 @import "/scss/design.css";
+/*---INSTRUCTIONS---------------*/
+@import "/scss/instructions.css";
 /*---FOOTER---------------*/
 .footer{
     background: #c3c1c1;

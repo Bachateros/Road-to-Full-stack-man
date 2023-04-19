@@ -14,6 +14,9 @@
   flex: 1 1 auto;
   padding: 40% 0;
 }
+.wireframes .text-block {
+  text-align: left;
+}
 .wireframes .text-block__title {
   font-size: 450%;
   font-weight: 700;
@@ -71,6 +74,9 @@
   }
   .wireframes .wireframes__buttons {
     justify-content: center;
+  }
+  .wireframes .text-block {
+    text-align: center;
   }
   .wireframes .text-block__title {
     font-size: 400%;

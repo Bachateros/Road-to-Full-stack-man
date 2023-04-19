@@ -5,6 +5,7 @@
 @import "/scss/header.css";
 @import "/scss/wireframes.css";
 @import "/scss/design.css";
+@import "/scss/instructions.css";
 .page {
   flex: 1 1 auto;
 }
@@ -16,6 +17,7 @@
 /*----HEADER------------------------------------*/
 /*---WIREFRAMES------*/
 /*---DESIGN---------------*/
+/*---INSTRUCTIONS---------------*/
 /*---FOOTER---------------*/
 .footer {
   background: #c3c1c1;

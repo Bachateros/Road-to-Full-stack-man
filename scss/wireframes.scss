@@ -16,9 +16,9 @@ $gray:#969696;
     &__text-block {
         flex: 1 1 auto;
         padding: 40% 0;
-
     }
     .text-block{
+        text-align: left;
         &__title{
             font-size: 450%;
             font-weight: 700;
@@ -85,6 +85,7 @@ $gray:#969696;
         }
     }
     .text-block{
+        text-align: center;
         &__title{
             font-size: 400%;
         }
