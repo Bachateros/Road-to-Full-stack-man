@@ -1,7 +1,6 @@
 $lightGray: rgba(39,41,55,.05);
-
+@import "/scss/general_blocks.css";
 .design {
-
     &__container {
         display: flex;
         flex-direction: column;
@@ -36,12 +35,14 @@ $lightGray: rgba(39,41,55,.05);
             letter-spacing: -1px;
         }
     }
-    &__title {
-        margin-bottom: 32px;
-    }
-    &__text {
-        max-width: 453px;
-        text-align: center;
+    .text-block{
+        &__title {
+            margin-bottom: 32px;
+        }
+        &__text {
+            max-width: 453px;
+            text-align: center;
+        }
     }
     &__row {
         display: flex;
@@ -115,10 +116,11 @@ $lightGray: rgba(39,41,55,.05);
             text-align: center;
         }
     }
-    &__img {
+    &__img{
         margin-top: 60px;
-        align-self: center;
-        
+        img{
+            width: 100%;
+        }
     }
 }
 

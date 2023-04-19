@@ -1,3 +1,4 @@
+@import "/scss/general_blocks.css";
 .design__container {
   display: flex;
   flex-direction: column;
@@ -32,10 +33,10 @@
   font-weight: 600;
   letter-spacing: -1px;
 }
-.design__title {
+.design .text-block__title {
   margin-bottom: 32px;
 }
-.design__text {
+.design .text-block__text {
   max-width: 453px;
   text-align: center;
 }
@@ -110,5 +111,7 @@
 }
 .design__img {
   margin-top: 60px;
-  align-self: center;
+}
+.design__img img {
+  width: 100%;
 }/*# sourceMappingURL=design.css.map */

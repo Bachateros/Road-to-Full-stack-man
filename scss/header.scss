@@ -115,9 +115,6 @@ $Purple:#7000FE;
         max-width: 769px;
     }
     .header{
-    &__container{
-            height: 50px;
-        }
     &__main{
         margin: 0 10px 0 0;
     }
@@ -155,10 +152,4 @@ $Purple:#7000FE;
         font-size: 15px;
     }
     
-}
-@media(max-width: 550px){
-    .link__img{
-        height: 65%;
-        width: 17%;
-    }
 }

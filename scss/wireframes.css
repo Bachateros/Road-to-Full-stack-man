@@ -1,3 +1,4 @@
+@import "/scss/general_blocks.css";
 .wireframes {
   margin: 45px 0 0 0;
 }
@@ -13,17 +14,13 @@
   flex: 1 1 auto;
   padding: 40% 0;
 }
-.wireframes__title {
-  font-size: 72px;
-  line-height: 100%;
-  font-weight: 600;
-  letter-spacing: -3px;
+.wireframes .text-block__title {
+  font-size: 450%;
+  font-weight: 700;
 }
-.wireframes__text {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 140%;
-  letter-spacing: -0.8px;
+.wireframes .text-block__text {
+  font-size: 180%;
+  font-weight: 500;
 }
 .wireframes__text-block > *:not(:last-child) {
   margin: 0 0 24px 0;
@@ -69,17 +66,17 @@
     max-width: 670px;
     text-align: center;
   }
-  .wireframes .wireframes__text-block {
-    padding: 0;
-  }
-  .wireframes .wireframes__text {
-    font-size: 175%;
-  }
   .wireframes .wireframes__main > * {
     margin-bottom: 30px;
   }
   .wireframes .wireframes__buttons {
     justify-content: center;
+  }
+  .wireframes .text-block__title {
+    font-size: 400%;
+  }
+  .wireframes .text-block__text {
+    font-size: 160%;
   }
 }
 @media (max-width: 1148px) {
@@ -88,16 +85,13 @@
     max-width: 670px;
     text-align: center;
   }
-  .wireframes .wireframes__text-block {
-    margin-top: 0;
-    max-width: 80%;
-    align-self: center;
+  .wireframes .text-block__title {
+    font-size: 350%;
+    font-weight: 600;
   }
-  .wireframes .wireframes__title {
-    font-size: 400%;
-  }
-  .wireframes .wireframes__text {
+  .wireframes .text-block__text {
     font-size: 150%;
+    font-weight: 400;
   }
 }
 @media (max-width: 768px) {
@@ -105,19 +99,6 @@
     margin-top: 5%;
     max-width: 670px;
     text-align: center;
-  }
-  .wireframes .wireframes__text-block {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0;
-    max-width: 80%;
-    align-self: center;
-  }
-  .wireframes .wireframes__title {
-    font-size: 400%;
-  }
-  .wireframes .wireframes__text {
-    font-size: 150%;
   }
   .wireframes .wireframes__buttons {
     display: flex;
@@ -144,23 +125,22 @@
   .wireframes .wireframes__img {
     max-width: 100%;
   }
+  .wireframes .text-block__title {
+    font-size: 350%;
+  }
+  .wireframes .text-block__text {
+    font-size: 130%;
+  }
 }
 @media (max-width: 539px) {
   .wireframes .wireframes__main {
     max-width: 670px;
     text-align: center;
   }
-  .wireframes .wireframes__text-block {
-    display: flex;
-    flex-direction: column;
-    max-width: 80%;
-    align-self: center;
-    max-width: 85%;
+  .wireframes .text-block__title {
+    font-size: 300%;
   }
-  .wireframes .wireframes__title {
-    font-size: 250%;
-  }
-  .wireframes .wireframes__text {
-    font-size: 110%;
+  .wireframes .text-block__text {
+    font-size: 120%;
   }
 }/*# sourceMappingURL=wireframes.css.map */

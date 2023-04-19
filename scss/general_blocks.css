@@ -14,18 +14,69 @@
   box-sizing: content-box;
 }
 
-.title {
+.text-block__title {
   font-size: 56px;
   font-weight: 600;
   line-height: 107.1428571429%;
   letter-spacing: -2px;
   color: #272937;
 }
-
-.text {
+.text-block__text {
   font-size: 20px;
   line-height: 140%;
   font-weight: 400;
   letter-spacing: -0.8px;
   color: rgba(39, 41, 55, 0.75);
+}
+
+@media (max-width: 1428px) {
+  .text-block {
+    padding: 0;
+  }
+  .text-block__text {
+    font-size: 175%;
+  }
+}
+@media (max-width: 1148px) {
+  .text-block {
+    margin-top: 0;
+    max-width: 80%;
+    align-self: center;
+  }
+  .text-block__title {
+    font-size: 400%;
+  }
+  .text-block__text {
+    font-size: 150%;
+  }
+}
+@media (max-width: 768px) {
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    max-width: 80%;
+    align-self: center;
+  }
+  .text-block__title {
+    font-size: 400%;
+  }
+  .text-block__text {
+    font-size: 150%;
+  }
+}
+@media (max-width: 539px) {
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    align-self: center;
+    max-width: 85%;
+  }
+  .text-block__title {
+    font-size: 250%;
+  }
+  .text-block__text {
+    font-size: 110%;
+  }
 }/*# sourceMappingURL=general_blocks.css.map */

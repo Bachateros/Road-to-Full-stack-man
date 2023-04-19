@@ -96,9 +96,6 @@
   ._container {
     max-width: 769px;
   }
-  .header__container {
-    height: 50px;
-  }
   .header__main {
     margin: 0 10px 0 0;
   }
@@ -131,11 +128,5 @@
   .menu {
     line-height: 5px;
     font-size: 15px;
-  }
-}
-@media (max-width: 550px) {
-  .link__img {
-    height: 65%;
-    width: 17%;
   }
 }/*# sourceMappingURL=header.css.map */

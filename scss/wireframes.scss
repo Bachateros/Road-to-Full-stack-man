@@ -2,6 +2,7 @@ $black:#000;
 $white: #fff;
 $purple:#7000FE;
 $gray:#969696;
+@import "/scss/general_blocks.css";
 .wireframes { 
     margin: 45px 0 0 0;
     &__container {
@@ -15,18 +16,17 @@ $gray:#969696;
     &__text-block {
         flex: 1 1 auto;
         padding: 40% 0;
+
     }
-    &__title {
-        font-size: 72px;
-        line-height: 100%;
-        font-weight: 600;
-        letter-spacing: -3px;
-    }
-    &__text {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: calc(28/20*100%);
-        letter-spacing: -0.8px;
+    .text-block{
+        &__title{
+            font-size: 450%;
+            font-weight: 700;
+        }
+        &__text{
+            font-size: 180%;
+            font-weight: 500;
+        }
     }
     &__text-block>*:not(:last-child){
         margin: 0 0 24px 0;
@@ -77,17 +77,19 @@ $gray:#969696;
             max-width: 670px;
             text-align: center;
         }
-        &__text-block{
-            padding: 0;
-        }
-        &__text{
-            font-size: 175%;
-        }
         &__main>*{
             margin-bottom: 30px;
         }
         &__buttons{
             justify-content: center;
+        }
+    }
+    .text-block{
+        &__title{
+            font-size: 400%;
+        }
+        &__text{
+            font-size: 160%;
         }
     }
     }
@@ -98,16 +100,15 @@ $gray:#969696;
             max-width: 670px;
             text-align: center;
         }
-        &__text-block{
-            margin-top: 0;
-            max-width: 80%;
-            align-self: center;
-        }
+    }
+    .text-block{
         &__title{
-            font-size: 400%;
+            font-size: 350%;
+            font-weight: 600;
         }
         &__text{
             font-size: 150%;
+            font-weight: 400;
         }
     }
     }
@@ -117,19 +118,6 @@ $gray:#969696;
             margin-top: 5%;
             max-width: 670px;
             text-align: center;
-        }
-        &__text-block{
-            display: flex;
-            flex-direction: column;
-            margin-top: 0;
-            max-width: 80%;
-            align-self: center;
-        }
-        &__title{
-            font-size: 400%;
-        }
-        &__text{
-            font-size: 150%;
         }
         &__buttons{
             display: flex;
@@ -157,6 +145,14 @@ $gray:#969696;
             max-width: 100%;
         }
     }
+    .text-block{
+        &__title{
+            font-size: 350%;
+        }
+        &__text{
+            font-size: 130%;
+        }
+    }
     }
     @media(max-width: 539px){
         .wireframes{
@@ -164,19 +160,14 @@ $gray:#969696;
             max-width: 670px;
             text-align: center;
         }
-        &__text-block{
-            display: flex;
-            flex-direction: column;
-            max-width: 80%;
-            align-self: center;
-            max-width: 85%;
         }
-        &__title{
-            font-size: 250%;
+        .text-block{
+            &__title{
+                font-size: 300%;
+            }
+            &__text{
+                font-size: 120%;
+            }
         }
-        &__text{
-            font-size: 110%;
-        }    
-    }
     }
 }
