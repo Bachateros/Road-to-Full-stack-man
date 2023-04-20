@@ -1,0 +1,59 @@
+@import "/css/general_blocks.css";
+.features__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.features__main-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.features__text-block {
+  max-width: 1020px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features__row {
+  display: flex;
+  height: 82.4px;
+  margin: 60px 5px 5px 5px;
+  padding: 0 -5px;
+}
+
+.features .text-block__title {
+  margin-bottom: 32px;
+}
+.features .text-block__text {
+  max-width: 453px;
+  text-align: center;
+}
+.features .row__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+.features .row .item__img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(112, 0, 254, 0.1);
+}
+.features .row .item__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 116.6666666667%;
+  letter-spacing: -1px;
+}
+.features .row .item__text {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 1.5;
+}

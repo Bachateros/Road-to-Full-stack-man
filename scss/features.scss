@@ -1,0 +1,44 @@
+@import "/css/general_blocks.css";
+@import "./mixin.scss";
+$LightPurple:rgba(112,0,254,.1);
+.features {
+    @include describe-block;
+    &__table{
+    }
+    &__row {
+    }
+    .row {
+        &__column {
+        }
+        &__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
+        }
+        .item {
+            
+            &__img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: $LightPurple;
+            }
+            &__img img{
+            }
+            &__title {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: calc(28/24*100%);
+                letter-spacing: -1px;
+            }
+            &__text {
+                margin-top: 8px;
+                text-align: center;
+                font-size: 14px;
+                opacity: 0.75;
+                line-height: 1.5;
+            }
+        }
+    }
+}

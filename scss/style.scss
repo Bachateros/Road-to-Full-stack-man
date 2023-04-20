@@ -17,6 +17,8 @@
 }
 .page__base {
 }
+.page__features {
+}
 /*----HEADER------------------------------------*/
 @import "/css/header.css";
 /*---WIREFRAMES------*/
@@ -27,6 +29,8 @@
 @import "/css/instructions.css";
 /*---BASE---------------*/
 @import "/css/base.css";
+/*---FEATURES---------------*/
+@import "/css/features.css";
 /*---FOOTER---------------*/
 .footer{
     background: #c3c1c1;

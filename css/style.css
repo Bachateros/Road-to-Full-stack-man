@@ -7,6 +7,7 @@
 @import "/css/design.css";
 @import "/css/instructions.css";
 @import "/css/base.css";
+@import "/css/features.css";
 .page {
   flex: 1 1 auto;
 }
@@ -20,6 +21,7 @@
 /*---DESIGN---------------*/
 /*---INSTRUCTIONS---------------*/
 /*---BASE---------------*/
+/*---FEATURES---------------*/
 /*---FOOTER---------------*/
 .footer {
   background: #c3c1c1;
