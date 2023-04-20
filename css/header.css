@@ -29,8 +29,7 @@
   align-self: center;
   color: rgba(39, 41, 55, 0.75);
   display: flex;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  column-gap: 20px;
   opacity: 0.9;
 }
 .header__item::before {
@@ -129,4 +128,4 @@
     line-height: 5px;
     font-size: 15px;
   }
-}/*# sourceMappingURL=header.css.map */
+}

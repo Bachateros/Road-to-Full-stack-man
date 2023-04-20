@@ -1,0 +1,5 @@
+@import "/css/general_blocks.css";
+@import "./mixin.scss";
+.base {
+    @include describe-block;
+}

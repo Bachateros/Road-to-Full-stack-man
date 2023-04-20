@@ -1,0 +1,107 @@
+@import "./extend.scss";
+$lightGray:rgba(39,41,55,.05);
+@mixin describe-block(){
+    &__container {
+        @extend %__container;
+    }
+    &__main-block {
+        @extend %__main-block;
+    }
+    &__text-block {
+        @extend %__text-block;
+    }
+    .text-block{
+        &__title {
+            margin-bottom: 32px;
+        }
+        &__text {
+            max-width: 453px;
+            text-align: center;
+        }
+    }
+    &__row {
+        @extend %__row;
+    }
+    .row{
+        &__column {
+            width: 255px;
+        }
+        &__column:not(:last-child){
+            border-right: 2px solid $lightGray;
+        }
+        &__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    }
+    .item {
+        &__text {
+            opacity: 0.5;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: -.035em;
+        }
+    }
+    }
+    &__img{
+        margin-top: 60px;
+        img{
+            width: 100%;
+        }
+    }
+    @media(max-width:1149px){
+        .row{
+            &__column{
+                width: 188px;
+                height: 79.6px;
+            }
+        }
+    }
+    @media(max-width:769px){
+        &__row{
+            flex-wrap: wrap;
+            justify-content: space-around;
+            height: 100%;
+            width: 100%;
+        }
+        .row{
+            &__column:not(:last-child){
+                width:45%;
+                border: none;
+            }
+            &__column:last-child{
+                 position: relative;
+                // border-left: 2px solid $lightGray;
+                // padding-left: 50%;
+            }
+            &__column:last-child::before {
+                content: "";
+                background: $lightGray;
+                position: absolute;
+                width:1%;
+                height: 85%;
+                top: -110%;
+                left: 50%;
+                //border-top: 2px solid $lightGray; 
+                z-index: 5;
+            }
+        }
+        .item {
+            &__text {
+                font-size: 10px;
+            }
+        }
+        &__img{
+            margin-top: 20px;
+        }
+    }
+    @media(max-width:650px){
+        .row{
+            &__item{
+                text-align: center;
+            }
+        }
+    }
+}

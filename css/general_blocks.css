@@ -17,6 +17,24 @@
 .text-block {
   text-align: center;
 }
+.text-block__logo {
+  display: flex;
+  background: rgba(39, 41, 55, 0.05);
+  border-radius: 16px;
+  align-items: center;
+  padding: 0 12px 0 8px;
+  margin-bottom: 20px;
+}
+.text-block .logo {
+  height: 32px;
+}
+.text-block .logo__icon {
+  margin: 0 6px 0 0;
+}
+.text-block .logo__text {
+  font-weight: 600;
+  letter-spacing: -1px;
+}
 .text-block__title {
   font-size: 60px;
   font-weight: 600;
@@ -78,4 +96,4 @@
   .text-block__text {
     font-size: 110%;
   }
-}/*# sourceMappingURL=general_blocks.css.map */
+}

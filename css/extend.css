@@ -1,0 +1,23 @@
+.text-block__title {
+  margin-bottom: 32px;
+}
+.text-block__text {
+  max-width: 453px;
+  text-align: center;
+}
+
+.row__column {
+  width: 255px;
+}
+.row__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.row .item__text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+}

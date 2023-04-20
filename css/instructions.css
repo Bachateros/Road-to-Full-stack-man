@@ -1,4 +1,4 @@
-@import "/scss/general_blocks.css";
+@import "/css/general_blocks.css";
 .instructions__container {
   margin-top: 200px;
 }
@@ -136,4 +136,4 @@
   .instructions .instructions-item__video video {
     width: 100%;
   }
-}/*# sourceMappingURL=instructions.css.map */
+}

@@ -1,6 +1,7 @@
 /*---COLORS---------------*/
 $lightBlack: #272937;
 $MainColor: rgba(39, 41, 55, 0.75);
+$lightGray: rgba(39,41,55,.05);
 /*----------------------*/
 .wrapper {
     min-height: 100%;
@@ -15,6 +16,24 @@ $MainColor: rgba(39, 41, 55, 0.75);
     box-sizing: content-box;
 }
 .text-block{
+    &__logo {
+        display: flex;
+        background: $lightGray;
+        border-radius: 16px;
+        align-items: center;
+        padding: 0 12px 0 8px;
+        margin-bottom: 20px;
+    }
+    .logo {
+        height: 32px;
+        &__icon {
+            margin: 0 6px 0 0;
+        }
+        &__text {
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+    }
     text-align: center;
     &__title{
         font-size: 60px;
@@ -23,7 +42,6 @@ $MainColor: rgba(39, 41, 55, 0.75);
         letter-spacing: -2px;
         color: $lightBlack;
     }
-
     &__text{
         font-size: 20px;
         line-height: calc(28/20*100%);

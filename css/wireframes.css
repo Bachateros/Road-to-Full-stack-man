@@ -1,4 +1,4 @@
-@import "/scss/general_blocks.css";
+@import "/css/general_blocks.css";
 .wireframes {
   margin: 45px 0 0 0;
 }
@@ -149,4 +149,4 @@
   .wireframes .text-block__text {
     font-size: 120%;
   }
-}/*# sourceMappingURL=wireframes.css.map */
+}

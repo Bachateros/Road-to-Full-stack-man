@@ -1,5 +1,5 @@
 @import "/css/zero_style.css";
-@import "/scss/general_blocks.css";
+@import "/css/general_blocks.css";
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
 
@@ -15,14 +15,18 @@
 }
 .page__instructions {
 }
+.page__base {
+}
 /*----HEADER------------------------------------*/
-@import "/scss/header.css";
+@import "/css/header.css";
 /*---WIREFRAMES------*/
-@import "/scss/wireframes.css";
+@import "/css/wireframes.css";
 /*---DESIGN---------------*/
-@import "/scss/design.css";
+@import "/css/design.css";
 /*---INSTRUCTIONS---------------*/
-@import "/scss/instructions.css";
+@import "/css/instructions.css";
+/*---BASE---------------*/
+@import "/css/base.css";
 /*---FOOTER---------------*/
 .footer{
     background: #c3c1c1;
