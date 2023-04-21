@@ -20,3 +20,14 @@ $lightGray:rgba(39,41,55,.05);
         }
     }
 }
+@mixin buttons(){
+    &__buttons {
+        @extend %__buttons;
+    }
+    &__link {
+        @extend %__link;
+    }
+    &__link_purple {
+        @extend %__link_purple;
+    }
+}

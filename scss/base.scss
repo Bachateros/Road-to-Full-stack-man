@@ -1,6 +1,5 @@
 @import "./mixin.scss";
 .base {
-    margin-top: 200px;
     @include describe-block;
     &__row {
         display: flex;

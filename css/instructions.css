@@ -1,7 +1,4 @@
 @import "/css/general_blocks.css";
-.instructions__container {
-  margin-top: 200px;
-}
 .instructions__column {
   display: flex;
   flex-wrap: wrap;

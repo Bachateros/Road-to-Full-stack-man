@@ -8,6 +8,9 @@
 .page {
     flex: 1 1 auto;
 }
+.page>*:not(:last-child){
+    margin-bottom: 200px;
+}
 .page__wireframes {
     background: #F2F2F2;
 }
@@ -19,18 +22,22 @@
 }
 .page__features {
 }
+.page__example {
+}
 /*----HEADER------------------------------------*/
-@import "/css/header.css";
+@import "./header.scss";
 /*---WIREFRAMES------*/
-@import "/css/wireframes.css";
+@import "./wireframes.scss";
 /*---DESIGN---------------*/
-@import "/css/design.css";
+@import "./design.scss";
 /*---INSTRUCTIONS---------------*/
-@import "/css/instructions.css";
+@import "./instructions.scss";
 /*---BASE---------------*/
-@import "/css/base.css";
+@import "./base.scss";
 /*---FEATURES---------------*/
-@import "/css/features.css";
+@import "./features.scss";
+/*---EXAMPLE---------------*/
+@import "/css/example.css";
 /*---FOOTER---------------*/
 .footer{
     background: #c3c1c1;

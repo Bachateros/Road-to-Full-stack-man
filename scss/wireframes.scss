@@ -3,8 +3,9 @@ $white: #fff;
 $purple:#7000FE;
 $gray:#969696;
 @import "/css/general_blocks.css";
+@import "./mixin.scss";
 .wireframes { 
-    margin: 45px 0 0 0;
+    margin-top:45px;
     &__container {
         display: flex; 
     }
@@ -31,34 +32,7 @@ $gray:#969696;
     &__text-block>*:not(:last-child){
         margin: 0 0 24px 0;
     }
-    &__buttons {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: calc(24/26*100%);
-        letter-spacing: -0.6px;
-
-        display: flex;
-    }
-    &__link {
-        color: inherit;
-        min-width: 160px;
-        min-height: 48px;
-        padding: 0px 4px;
-        border: 2px solid $black;
-        border-radius: 5px;
-        background: $white;
-
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;   
-    }
-    &__link_purple {
-        padding: 0px 17px;
-        color:$white;
-        background: $purple;
-        border: none;
-        margin: 0 20px 0 0; 
-    }
+    @include buttons;
     &__note {
         font-size: 12px;
         line-height: 1.5;
@@ -113,7 +87,7 @@ $gray:#969696;
         }
     }
     }
-    @media(max-width: 768px){
+    @media(max-width: 769px){
        .wireframes{
         &__main{
             margin-top: 5%;
