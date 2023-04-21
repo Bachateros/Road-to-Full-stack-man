@@ -3,6 +3,7 @@ $Dark: #272937;
 $Purple:#7000FE;
 .header{
     &__row{
+        z-index: 100;
         position: fixed;
         width: 100%;
         height: 60px;

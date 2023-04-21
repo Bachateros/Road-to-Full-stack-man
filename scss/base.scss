@@ -2,6 +2,12 @@
 .base {
     margin-top: 200px;
     @include describe-block;
+    &__row {
+        display: flex;
+        height: 82.4px;
+        margin: 60px 5px 5px 5px;
+        padding: 0 -5px;
+    }
     .row{
         &__column {
             width: 255px;

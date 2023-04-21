@@ -17,13 +17,6 @@
   align-items: center;
 }
 
-.base__row {
-  display: flex;
-  height: 82.4px;
-  margin: 60px 5px 5px 5px;
-  padding: 0 -5px;
-}
-
 .base {
   margin-top: 200px;
 }
@@ -33,6 +26,12 @@
 .base .text-block__text {
   max-width: 453px;
   text-align: center;
+}
+.base__row {
+  display: flex;
+  height: 82.4px;
+  margin: 60px 5px 5px 5px;
+  padding: 0 -5px;
 }
 .base .row__column {
   width: 255px;
