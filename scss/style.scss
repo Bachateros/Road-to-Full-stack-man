@@ -1,13 +1,26 @@
 @import "/css/zero_style.css";
 @import "/css/general_blocks.css";
+@import "/css/animation.css";
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+:root {
+    --animate-duration: 1s;
+    --animate-delay: 1s;
+    --animate-repeat: 1
+}
 
 /*---PAGE------*/
 .page {
     flex: 1 1 auto;
-}
-.page>*:not(:last-child){
-    margin-bottom: 200px;
+    &>*:not(:last-child){
+        margin-bottom: 200px;
+    }
+    &>*{
+        animation-name: fallInShadow;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-play-state: none;
+    }
 }
 .page__wireframes {
     background: #F2F2F2;

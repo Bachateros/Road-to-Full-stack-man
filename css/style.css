@@ -1,20 +1,32 @@
 @charset "UTF-8";
 @import "/css/zero_style.css";
 @import "/css/general_blocks.css";
+@import "/css/animation.css";
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
-/*---PAGE------*/
 @import "/css/general_blocks.css";
 @import "/css/general_blocks.css";
 @import "/css/general_blocks.css";
 @import "/css/selling.css";
 @import "/css/info.css";
 @import "/css/footer.css";
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1 ;
+}
+
+/*---PAGE------*/
 .page {
   flex: 1 1 auto;
 }
-
 .page > *:not(:last-child) {
   margin-bottom: 200px;
+}
+.page > * {
+  animation-name: fallInShadow;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-play-state: none;
 }
 
 .page__wireframes {
@@ -229,6 +241,14 @@
 }
 .wireframes__text-block > *:not(:last-child) {
   margin: 0 0 24px 0;
+}
+.wireframes__link:hover {
+  transition-duration: 0.5s;
+  background: #f0f0f0;
+}
+.wireframes__link_purple:hover {
+  transition-duration: 0.5s;
+  background: #6500e9;
 }
 .wireframes__note {
   font-size: 12px;
@@ -1024,6 +1044,14 @@
   margin: 0 10px 32px;
   letter-spacing: -0.04em;
   text-align: center;
+}
+.example .item__link:hover {
+  transition-duration: 0.5s;
+  background: #f0f0f0;
+}
+.example .item__link_purple:hover {
+  transition-duration: 0.5s;
+  background: #6500e9;
 }
 .example .item__buttons {
   margin-bottom: 37px;

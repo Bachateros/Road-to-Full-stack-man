@@ -2,6 +2,7 @@
 
 $LightGrey:#f3f2f3;
 $Purple: #7000fe;
+$darkPurple: #6b02f4;
 .info {
     &__container {
         background: $LightGrey;
@@ -44,6 +45,12 @@ $Purple: #7000fe;
         padding: 0 12px;
         width: 140px;
         border-radius: 7px;
+        &:hover{
+            background: $darkPurple;
+        }
+        &:active{
+            background: $Purple;
+        }
     }
     &__note {
         font-size: 12px;

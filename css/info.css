@@ -41,6 +41,12 @@
   width: 140px;
   border-radius: 7px;
 }
+.info__butt:hover {
+  background: #6b02f4;
+}
+.info__butt:active {
+  background: #7000fe;
+}
 .info__note {
   font-size: 12px;
   line-height: 16px;

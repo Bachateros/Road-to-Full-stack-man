@@ -4,6 +4,10 @@ $lightGreen:rgba(72,181,39,.1);
 $darkPurple: #6500e6;
 $purple: #7000fe;
 $cream: rgba(0,0,0,.05);
+$lightGrey:#f0f0f0;
+$grey:#dfdfdf;
+$lightBlack:rgba(0,0,0,.8);
+$light-lightBlack:rgba(0,0,0,.7);
 
 .selling {
     &__container {
@@ -122,6 +126,12 @@ $cream: rgba(0,0,0,.05);
             padding: 16px 12px;
             border: 2px solid black;
             border-radius: 7px;
+            &:hover{
+                background: $lightBlack;
+            }
+            &:active{
+                background: $light-lightBlack;
+            }
         }
     }
     .card_purple {
@@ -139,6 +149,12 @@ $cream: rgba(0,0,0,.05);
                 background: white;
                 color:$purple;
                 border-color: white;
+                &:hover{
+                    background: $lightGrey;
+                }
+                &:active{
+                    background: $grey;
+                }
             }
         }
     }

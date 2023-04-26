@@ -20,14 +20,24 @@ $lightGray:rgba(39,41,55,.05);
         }
     }
 }
+$grey: #f0f0f0;
+$DarkPurple:#6500e9;
 @mixin buttons(){
     &__buttons {
         @extend %__buttons;
     }
     &__link {
         @extend %__link;
+        &:hover{
+            transition-duration:.5s;
+            background: $grey; 
+        }
     }
     &__link_purple {
         @extend %__link_purple;
+        &:hover{
+            transition-duration:.5s;
+            background: $DarkPurple; 
+        }
     }
 }

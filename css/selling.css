@@ -215,6 +215,12 @@
   border: 2px solid black;
   border-radius: 7px;
 }
+.selling .card__butt:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.selling .card__butt:active {
+  background: rgba(0, 0, 0, 0.7);
+}
 .selling .card_purple {
   grid-area: purple-card;
 }
@@ -230,6 +236,12 @@
   background: white;
   color: #7000fe;
   border-color: white;
+}
+.selling .card_purple .card__butt:hover {
+  background: #f0f0f0;
+}
+.selling .card_purple .card__butt:active {
+  background: #dfdfdf;
 }
 .selling__help-block {
   padding: 80px 0 0 0;

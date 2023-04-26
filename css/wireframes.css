@@ -57,6 +57,14 @@
 .wireframes__text-block > *:not(:last-child) {
   margin: 0 0 24px 0;
 }
+.wireframes__link:hover {
+  transition-duration: 1s;
+  background: #f0f0f0;
+}
+.wireframes__link_purple:hover {
+  transition-duration: 1s;
+  background: #6500e9;
+}
 .wireframes__note {
   font-size: 12px;
   line-height: 1.5;
