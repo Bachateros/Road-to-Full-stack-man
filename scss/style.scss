@@ -2,8 +2,6 @@
 @import "/css/general_blocks.css";
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
 
-
-
 /*---PAGE------*/
 .page {
     flex: 1 1 auto;
@@ -24,6 +22,10 @@
 }
 .page__example {
 }
+.page__selling {
+}
+.page__info {
+}
 /*----HEADER------------------------------------*/
 @import "./header.scss";
 /*---WIREFRAMES------*/
@@ -37,7 +39,11 @@
 /*---FEATURES---------------*/
 @import "./features.scss";
 /*---EXAMPLE---------------*/
-@import "/css/example.css";
+@import "./example.scss";
+/*---SELLING---------------*/
+@import "/css/selling.css";
+/*---INFO---------------*/
+@import "/css/info.css";
 /*---FOOTER---------------*/
 .footer{
     background: #c3c1c1;

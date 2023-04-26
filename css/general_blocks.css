@@ -50,9 +50,12 @@
   color: rgba(39, 41, 55, 0.75);
 }
 
-@media (max-width: 1428px) {
+@media (max-width: 1429px) {
   .text-block {
     padding: 0;
+  }
+  ._container {
+    max-width: 1150px;
   }
 }
 @media (max-width: 1149px) {
@@ -65,6 +68,9 @@
   }
   .text-block__text {
     font-size: 130%;
+  }
+  ._container {
+    max-width: 770px;
   }
 }
 @media (max-width: 769px) {
@@ -80,6 +86,9 @@
   }
   .text-block__text {
     font-size: 14px;
+  }
+  ._container {
+    max-width: 575px;
   }
 }
 @media (max-width: 539px) {
