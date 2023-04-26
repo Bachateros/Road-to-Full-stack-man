@@ -8,6 +8,7 @@
 @import "/css/general_blocks.css";
 @import "/css/selling.css";
 @import "/css/info.css";
+@import "/css/footer.css";
 .page {
   flex: 1 1 auto;
 }
@@ -1092,6 +1093,3 @@
 /*---SELLING---------------*/
 /*---INFO---------------*/
 /*---FOOTER---------------*/
-.footer {
-  background: #c3c1c1;
-}
