@@ -363,9 +363,35 @@ function aclean(arr){
     let sorted = word.toLowerCase().split('').sort().join('');
     map.set(sorted, word);
   }
+  abc = 100;
   return Array.from(map.values());
 }
 
 let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
-alert( aclean(arr) ); // "nap,teachers,ear" или "PAN,cheaters,era"
+console.log( aclean(arr) ); // "nap,teachers,ear" или "PAN,cheaters,era"
+
+console.log(abc);
+
+function showName(){
+  console.log('Vasya');
+}
+setTimeout(showName,0);
+console.log('Max');
+alert(location.href); // показывает текущий URL
+if (confirm("Перейти на Wikipedia?")) {
+  location.href = "https://wikipedia.org"; // перенаправляет браузер на другой URL
+}
+
+const user1 = {name: 'John' }
+const user2 = {...user1};
+
+user1.name = 'Alice';
+
+console.log(user1.name);
+console.log(user2.name);
+
+let perem = document.querySelector('ul').lastChild;
+
+let perem3 = document.querySelectorAll('.like');//document.getElementsByClassName('like);
+

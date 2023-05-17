@@ -412,7 +412,7 @@ const getCapitalizedStrings = string => {
   let strArray = string.split('');
   let arr = ['',''];
   /*-----------WHYYYYYYYYYYYYYYYYYYYYYY-------------------------------*/
-  /*arr.map( function(item, mainIndex) {
+  return arr.map( (item, mainIndex) => {
     item = strArray.reduce( (str, char, index) => {
       if( index % 2 == mainIndex )
         str += char.toUpperCase();
@@ -420,8 +420,8 @@ const getCapitalizedStrings = string => {
       return str;
     }, '');
     return item;
-  });*/
-  arr[0] = strArray.reduce( (str, char,index) => {
+  });
+  /*arr[0] = strArray.reduce( (str, char,index) => {
     if( index % 2 == 0 )
       str += char.toUpperCase();
     else str += char;
@@ -433,7 +433,7 @@ const getCapitalizedStrings = string => {
     else str += char;
     return str;
   }, '');
-  return arr;
+  return arr;*/
 };
 console.log(getCapitalizedStrings('abcdef'));
 /**
@@ -510,8 +510,12 @@ const getNotUniqueValues = numbers => {
       map.delete(key);
     }
   }
-  return Array.from(map);
+  let set = new Set();
+  for (const key of map.keys()) {
+    set.add(key);
+  }
+  return Array.from(set);
 };
-console.log( getNotUniqueValues([1,  2,  1, 4, 5]) );
+console.log( getNotUniqueValues([1,  2, 2, 1, 4, 5]) );
 
 
