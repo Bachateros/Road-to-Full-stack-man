@@ -1,6 +1,20 @@
 <template>
-  <v-toolbar title="ToDo vue Monster" dark color="indigo" prominent></v-toolbar>
+  <appHeader />
+  <appSearch />
+  <appTasks />
 </template>
 <!--     image="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" -->
-<script setup></script>
+<script>
+import appHeader from "./components/header.vue"
+import appSearch from "./components/search.vue"
+import appTasks from "./components/tasks.vue"
+export default {
+  name: "ToDoList",
+  components: {
+    appHeader,
+    appSearch,
+    appTasks,
+  },
+}
+</script>
 <style scoped lang="scss"></style>
