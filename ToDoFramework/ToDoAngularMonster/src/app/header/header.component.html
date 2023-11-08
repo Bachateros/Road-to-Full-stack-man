@@ -1,0 +1,19 @@
+<!-- As a heading -->
+<nav
+  class="navbar sticky-top bg-primary header d-flex jucstify-space-between text-light"
+>
+  <div class="flex-fill">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 text-light"
+        >ToDoMonster
+        <small
+          >Angular
+          <img src="../../favicon.ico" alt="ang" width="15" />
+        </small>
+      </span>
+    </div>
+  </div>
+  <div class="clock">
+    <div class="container-fluid">{{ time | date : "HH:mm:ss" }}</div>
+  </div>
+</nav>
