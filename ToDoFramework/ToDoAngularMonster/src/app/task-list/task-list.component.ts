@@ -27,9 +27,11 @@ export class TaskListComponent implements ControlValueAccessor {
   setDisabledState?(isDisabled: boolean): void {}
 
   deleteTask(task: string): void {
-    // console.log(`I delete ${id} - ${this.tasks[id]}`);
-
     this.tasks = this.tasks.filter((el) => el != task);
     this.onChange(this.tasks);
+  }
+
+  getTitle(task: string) {
+    return `${task.slice(0, task.indexOf(' '))}...`;
   }
 }

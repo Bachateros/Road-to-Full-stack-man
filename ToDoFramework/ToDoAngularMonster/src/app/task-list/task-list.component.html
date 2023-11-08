@@ -15,7 +15,7 @@
       class="align-self-center form-check-input me-1"
     />
     <div class="ms-2 me-auto">
-      <div class="fw-bold mb-2 h5">Title</div>
+      <div class="fw-bold mb-2 h5">{{ getTitle(task) | uppercase }}</div>
       {{ task }}
     </div>
     <button
