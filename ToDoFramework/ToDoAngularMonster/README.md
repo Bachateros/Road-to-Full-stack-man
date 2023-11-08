@@ -1,27 +1,57 @@
-# ToDoAngularMonster
+# Переделка старого проекта ToDoList Monster под фреймворк Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+## Реализованы следующий функционал:
 
-## Development server
+- Вывести реальное время на экран в браузере в формате ЧЧ:ММ:СС. Должно изменяться каждую секунду.
+- Реализуем приложение Список дел с возможностью добавить новый элемент в список из инпута по нажатию кнопки "Добавить";
+- Реализовать удаление элемента по нажатию крестика;
+- Реализовать возможность редактирования элемента.
+- - При нажатии на текст элемента он отображается в инпуте, название кнопки меняется на "Обновить".
+- - После изменения названия и нажатия на "Обновить" текст элемента изменяется в списке, инпут сбрасывается, кнопка переименовывается обратно в "Добавить".
+- - Предусмотреть возможность отменить редактирование (крестик в конце инпута), при нажатии на который редактирование прекращается: инпут очищается, кнопка вновь имеет заголовок "Добавить".
+- - Редактируемый элемент подсвечивается как активный.
+- При нажатии на галочку текст итема становится зачеркнутым, при отжатии снова обычным.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Зависимости
 
-## Code scaffolding
+Для запуска проекта использовались следующие зависимости:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- bootstrap
 
-## Build
+## Запуск проекта
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Для запуска проекта выполните следующие шаги:
 
-## Running unit tests
+1. Клонирование репозитория: Склонируйте репозиторий проекта на свой локальный компьютер.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone https://github.com/Bachateros/Road-to-Full-stack-man.git
+```
 
-## Running end-to-end tests
+2. Перейдите в папку с клонированным проектом командой.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+cd .\ToDoFramework\ToDoAngularMonster\
+```
 
-## Further help
+3. Установите все зависимости командой
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm i
+```
+
+4. Запуск приложения: Запустите приложение с помощью команды:
+
+```bash
+ng serve
+```
+
+5. Переход в браузере: Откройте браузер и перейдите по адресу http://localhost:4200 для доступа к приложению.
+
+Пожалуйста, обратите внимание, что в данном примере предполагается, что порт 4200 свободен для использования.
+
+## Автор
+
+Автор: Булычев Максим Олегович.
+Email: ser-morkovka47@mail.ru
+GitHub: https://github.com/Bachateros
