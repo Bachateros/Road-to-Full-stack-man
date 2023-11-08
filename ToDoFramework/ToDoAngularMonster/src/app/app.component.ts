@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  tasks: Array<string> = [];
+  tasks: Array<string> = ['qwerty', '123'];
 }

@@ -2,6 +2,6 @@
   <app-header></app-header>
   <main class="main p-3">
     <app-input [tasks]="tasks"></app-input>
-    <div class="" *ngFor="let task of tasks">{{ task }}</div>
+    <app-task-list class="m-3" [tasks]="tasks"></app-task-list>
   </main>
 </div>

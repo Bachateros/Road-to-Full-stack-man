@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { InputComponent } from './input/input.component';
 import { FormsModule } from '@angular/forms';
+import { TaskListComponent } from './task-list/task-list.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, InputComponent],
+  declarations: [AppComponent, HeaderComponent, InputComponent, TaskListComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
