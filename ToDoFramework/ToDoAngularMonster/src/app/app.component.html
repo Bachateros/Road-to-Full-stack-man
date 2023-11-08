@@ -2,6 +2,9 @@
   <app-header></app-header>
   <main class="main p-3">
     <app-input [tasks]="tasks"></app-input>
-    <app-task-list class="m-3" [tasks]="tasks"></app-task-list>
+    <app-task-list class="m-3" [(ngModel)]="tasks"></app-task-list>
+    <hr />
+    <p>App: {{ tasks }}</p>
+    <hr />
   </main>
 </div>
