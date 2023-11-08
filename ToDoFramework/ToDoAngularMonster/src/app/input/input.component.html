@@ -4,6 +4,7 @@
     type="text"
     class="form-control"
     [(ngModel)]="newTask"
+    (keydown.enter)="addTask()"
     placeholder="Захватить мир своими танцами"
   />
   <button class="btn btn-outline-secondary" (click)="addTask()">

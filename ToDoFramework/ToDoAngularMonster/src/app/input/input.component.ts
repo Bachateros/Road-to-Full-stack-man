@@ -14,5 +14,6 @@ export class InputComponent {
     if (this.newTask.trim() && !this.tasks.includes(this.newTask)) {
       this.tasks.push(this.newTask);
     }
+    this.newTask = '';
   }
 }
