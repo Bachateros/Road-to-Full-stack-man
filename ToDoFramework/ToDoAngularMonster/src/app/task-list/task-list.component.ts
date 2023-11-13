@@ -24,14 +24,13 @@ const VALUE_ACCESSOR: Provider = {
 })
 export class TaskListComponent implements ControlValueAccessor, OnChanges {
   tasks!: Array<string>;
-  @Input()
-  isEdit!: boolean;
   editID: number = -1;
+
+  @Input() isEdit!: boolean;
 
   @Output('editedTask')
   onEdit: EventEmitter<number> = new EventEmitter<number>();
 
-  @ViewChild('item') itemRef!: ElementRef;
   @ViewChild('list') listRef!: ElementRef;
 
   private onChange = (value: any) => {};
@@ -50,16 +49,20 @@ export class TaskListComponent implements ControlValueAccessor, OnChanges {
     this.onChange(this.tasks);
   }
 
-  editTask(id: number) {
+  editTask(id: number): void {
     this.editID = id;
     if (!this.isEdit) {
       this.listRef.nativeElement.children[id].classList.add('active');
       this.onEdit.emit(id);
     }
   }
-  getTitle(task: string) {
+  getTitle(task: string): string {
     let title = task.slice(0, 15);
-    return `${title.slice(0, title.indexOf(' '))}...`;
+    return `${title.slice(0, title.indexOf(' '))}`;
+  }
+
+  checkTask(id: number): void {
+    this.listRef.nativeElement.children[id].classList.toggle('checked');
   }
 
   ngOnChanges(): void {

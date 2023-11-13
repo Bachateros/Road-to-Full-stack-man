@@ -14,15 +14,14 @@ import {
   styleUrls: ['./input.component.scss'],
 })
 export class InputComponent implements OnChanges {
-  @Input()
-  tasks!: Array<string>;
-  @Input()
-  editedTaskId!: number;
+  @Input() tasks!: Array<string>;
+  @Input() editedTaskId!: number;
 
   @Output('finishEdit')
   finishEdit: EventEmitter<number> = new EventEmitter<number>();
 
   @ViewChild('input') inputRef!: ElementRef;
+
   newTask = '';
   btnText = 'Добавить';
 
@@ -34,7 +33,7 @@ export class InputComponent implements OnChanges {
     }
   }
 
-  addTask() {
+  addTask(): void {
     if (this.btnText === 'Добавить') {
       //add task
       if (this.newTask.trim() && !this.tasks.includes(this.newTask)) {
@@ -49,14 +48,12 @@ export class InputComponent implements OnChanges {
       this.finishEdit.emit();
       this.inputRef.nativeElement.blur();
     }
-
     this.newTask = '';
   }
 
-  cancelEdit() {
+  cancelEdit(): void {
     this.btnText = 'Добавить';
     this.inputRef.nativeElement.value = '';
-    this.newTask = '';
     this.finishEdit.emit();
     this.inputRef.nativeElement.blur();
   }

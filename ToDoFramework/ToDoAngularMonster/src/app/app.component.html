@@ -6,15 +6,12 @@
       [editedTaskId]="editedTaskId"
       (finishEdit)="editedTaskId = -1"
     ></app-input>
+
     <app-task-list
       class="m-3"
       [(ngModel)]="tasks"
       (editedTask)="editTask($event)"
       [isEdit]="editedTaskId >= 0 ? true : false"
     ></app-task-list>
-
-    <hr />
-    <p>App: {{ tasks }}</p>
-    <hr />
   </main>
 </div>
