@@ -1,8 +1,17 @@
 <div class="root">
   <app-header></app-header>
   <main class="main p-3">
-    <app-input [tasks]="tasks"></app-input>
-    <app-task-list class="m-3" [(ngModel)]="tasks"></app-task-list>
+    <app-input
+      [tasks]="tasks"
+      [editedTaskId]="editedTaskId"
+      (finishEdit)="editedTaskId = -1"
+    ></app-input>
+    <app-task-list
+      class="m-3"
+      [(ngModel)]="tasks"
+      (editedTask)="editTask($event)"
+    ></app-task-list>
+
     <hr />
     <p>App: {{ tasks }}</p>
     <hr />

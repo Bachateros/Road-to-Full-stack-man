@@ -1,4 +1,11 @@
-import { Component, Input, Provider, forwardRef } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  Provider,
+  forwardRef,
+} from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 const VALUE_ACCESSOR: Provider = {
   provide: NG_VALUE_ACCESSOR,
@@ -14,6 +21,8 @@ const VALUE_ACCESSOR: Provider = {
 })
 export class TaskListComponent implements ControlValueAccessor {
   tasks!: Array<string>;
+  @Output('editedTask')
+  onEdit: EventEmitter<number> = new EventEmitter<number>();
 
   private onChange = (value: any) => {};
 
@@ -31,6 +40,10 @@ export class TaskListComponent implements ControlValueAccessor {
     this.onChange(this.tasks);
   }
 
+  editTask(id: number) {
+    this.onEdit.emit(id);
+    console.log('edit', id);
+  }
   getTitle(task: string) {
     return `${task.slice(0, task.indexOf(' '))}...`;
   }

@@ -6,8 +6,9 @@
     [(ngModel)]="newTask"
     (keydown.enter)="addTask()"
     placeholder="Захватить мир своими танцами"
+    #input
   />
-  <button class="btn btn-outline-secondary" (click)="addTask()">
-    Добавить
+  <button #button class="btn btn-outline-secondary" (click)="addTask()">
+    {{ btnText }}
   </button>
 </div>

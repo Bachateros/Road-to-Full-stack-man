@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  tasks: Array<string> = ['qwerty', '123'];
+  tasks: Array<string> = [];
+  editedTaskId: number = -1;
+
+  // @ViewChild('input', { static: false }) inputRef!: any;
+  editTask(id: number) {
+    this.editedTaskId = id;
+    // this.inputRef.newTask = '123';
+    // console.log(this.editedTask);
+  }
 }
