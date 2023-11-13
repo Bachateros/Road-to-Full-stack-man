@@ -4,17 +4,18 @@
   Component:
   {{ tasks }}
 </p>
-<ul class="list-group">
+<ul class="list-group" #list>
   <li
     class="list-group-item list-group-item-light list-group-item-action d-flex justyfy-content-between align-items-start"
     *ngFor="let task of tasks; let id = index"
+    #item
   >
     <input
       type="checkbox"
       value=""
       class="align-self-center form-check-input me-1"
     />
-    <div class="ms-2 me-auto">
+    <div class="ms-2 me-auto" (click)="editTask(id)" (click)="addClass(id)">
       <div class="fw-bold mb-2 h5">{{ getTitle(task) | uppercase }}</div>
       {{ task }}
     </div>

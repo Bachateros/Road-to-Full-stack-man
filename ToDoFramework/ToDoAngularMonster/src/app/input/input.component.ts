@@ -12,7 +12,6 @@ import {
   selector: 'app-input',
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputComponent implements OnChanges {
   @Input()

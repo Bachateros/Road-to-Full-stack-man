@@ -3,8 +3,10 @@ import {
   EventEmitter,
   Input,
   Output,
+  ViewChild,
   Provider,
   forwardRef,
+  ElementRef,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 const VALUE_ACCESSOR: Provider = {
@@ -21,8 +23,12 @@ const VALUE_ACCESSOR: Provider = {
 })
 export class TaskListComponent implements ControlValueAccessor {
   tasks!: Array<string>;
+  isEdit = false;
   @Output('editedTask')
   onEdit: EventEmitter<number> = new EventEmitter<number>();
+
+  @ViewChild('item') itemRef!: ElementRef;
+  @ViewChild('list') listRef!: ElementRef;
 
   private onChange = (value: any) => {};
 
@@ -40,11 +46,21 @@ export class TaskListComponent implements ControlValueAccessor {
     this.onChange(this.tasks);
   }
 
+  addClass(id: number) {
+    if (!this.isEdit) {
+      this.listRef.nativeElement.children[id].classList.add('active');
+      this.isEdit = true;
+    }
+    console.log(this.listRef.nativeElement.children[id].classList);
+    // console.log(this.itemRef.nativeElement);
+  }
   editTask(id: number) {
-    this.onEdit.emit(id);
-    console.log('edit', id);
+    if (!this.isEdit) {
+      this.onEdit.emit(id);
+    }
   }
   getTitle(task: string) {
-    return `${task.slice(0, task.indexOf(' '))}...`;
+    let title = task.slice(0, 15);
+    return `${title.slice(0, title.indexOf(' '))}...`;
   }
 }
