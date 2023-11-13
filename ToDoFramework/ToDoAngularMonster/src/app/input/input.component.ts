@@ -52,4 +52,12 @@ export class InputComponent implements OnChanges {
 
     this.newTask = '';
   }
+
+  cancelEdit() {
+    this.btnText = 'Добавить';
+    this.inputRef.nativeElement.value = '';
+    this.newTask = '';
+    this.finishEdit.emit();
+    this.inputRef.nativeElement.blur();
+  }
 }

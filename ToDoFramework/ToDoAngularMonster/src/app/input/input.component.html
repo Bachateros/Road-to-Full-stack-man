@@ -1,4 +1,4 @@
-<div class="input-group">
+<div class="input-group inputForm">
   <div class="input-group-text"><i class="bi bi-calendar-check"></i></div>
   <input
     type="text"
@@ -8,6 +8,15 @@
     placeholder="Захватить мир своими танцами"
     #input
   />
+  <div class="closeBtn" *ngIf="editedTaskId >= 0">
+    <button
+      class="btn btn-danger"
+      title="Отменить редактирование"
+      (click)="cancelEdit()"
+    >
+      &times;
+    </button>
+  </div>
   <button #button class="btn btn-outline-secondary" (click)="addTask()">
     {{ btnText }}
   </button>
