@@ -23,7 +23,9 @@ const VALUE_ACCESSOR: Provider = {
 })
 export class TaskListComponent implements ControlValueAccessor {
   tasks!: Array<string>;
-  isEdit = false;
+  @Input()
+  isEdit!: boolean;
+
   @Output('editedTask')
   onEdit: EventEmitter<number> = new EventEmitter<number>();
 
@@ -46,16 +48,11 @@ export class TaskListComponent implements ControlValueAccessor {
     this.onChange(this.tasks);
   }
 
-  addClass(id: number) {
+  editTask(id: number) {
+    console.log(this.isEdit);
+
     if (!this.isEdit) {
       this.listRef.nativeElement.children[id].classList.add('active');
-      this.isEdit = true;
-    }
-    console.log(this.listRef.nativeElement.children[id].classList);
-    // console.log(this.itemRef.nativeElement);
-  }
-  editTask(id: number) {
-    if (!this.isEdit) {
       this.onEdit.emit(id);
     }
   }
