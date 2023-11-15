@@ -1,5 +1,4 @@
-import { Component, ElementRef, OnChanges, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
@@ -7,22 +6,22 @@ import { TasksService } from 'src/app/services/tasks.service';
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })
-export class InputComponent implements OnChanges {
+export class InputComponent {
   @ViewChild('input') inputRef!: ElementRef;
 
   newTask = '';
   btnText = 'Добавить';
-  isEdit$: Observable<boolean>;
-  constructor(public taskService: TasksService) {
-    this.isEdit$ = taskService.isEdit;
-  }
 
-  ngOnChanges(): void {
-    if (this.taskService.isEdit) {
-      this.btnText = 'Обновить';
-      this.inputRef.nativeElement.value = this.taskService.getEditedTask();
-      this.inputRef.nativeElement.focus();
-    }
+  constructor(public taskService: TasksService) {
+    taskService.isEdit$.subscribe((v) => {
+      if (v) {
+        this.btnText = 'Обновить';
+        this.inputRef.nativeElement.value = this.taskService.getEditedTask();
+        this.inputRef.nativeElement.focus();
+      } else {
+        this.btnText = 'Добавить';
+      }
+    });
   }
 
   addTask(): void {

@@ -1,5 +1,5 @@
 <h2 class="text-center font-weight-bold">Ваши задачи:</h2>
-<ul class="list-group" #list>
+<ul class="list-group">
   <app-task-item
     class="list-group-item list-group-item-light list-group-item-action d-flex justyfy-content-between align-items-start"
     *ngFor="let task of taskService.getTasks(); let id = index"

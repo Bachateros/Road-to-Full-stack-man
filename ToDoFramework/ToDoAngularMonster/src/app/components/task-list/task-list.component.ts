@@ -1,12 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-  ElementRef,
-  OnChanges,
-} from '@angular/core';
+import { Component } from '@angular/core';
 import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
@@ -14,19 +6,6 @@ import { TasksService } from 'src/app/services/tasks.service';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.scss'],
 })
-export class TaskListComponent implements OnChanges {
-  editID: number = -1;
-
+export class TaskListComponent {
   constructor(public taskService: TasksService) {}
-
-  @Input() isEdit!: boolean;
-
-  @Output('editedTask')
-  onEdit: EventEmitter<number> = new EventEmitter<number>();
-
-  ngOnChanges(): void {
-    if (this.editID != -1) {
-      this.editID = -1;
-    }
-  }
 }

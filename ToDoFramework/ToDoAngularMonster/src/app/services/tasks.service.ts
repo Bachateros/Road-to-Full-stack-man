@@ -7,8 +7,7 @@ import { BehaviorSubject, Observable, take } from 'rxjs';
 export class TasksService {
   tasks: Array<string> = [];
   editedTaskId: number = -1;
-  isEdit: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  isEdit$: Observable<boolean> = this.isEdit.asObservable();
+  isEdit$ = new BehaviorSubject<boolean>(false);
   constructor() {}
 
   addTask(newTask: string): void {
@@ -46,15 +45,6 @@ export class TasksService {
     return this.tasks[this.editedTaskId];
   }
   changeIsEdit(): void {
-    this.isEdit$.pipe(take(1)).subscribe(() => {
-      let oldValue;
-      this.isEdit$.subscribe((isEdit) => {
-        oldValue = isEdit;
-      });
-      console.log('oldValue', oldValue);
-      console.log('newValue', !oldValue);
-
-      this.isEdit.next(!oldValue);
-    });
+    this.isEdit$.next(!this.isEdit$.value);
   }
 }

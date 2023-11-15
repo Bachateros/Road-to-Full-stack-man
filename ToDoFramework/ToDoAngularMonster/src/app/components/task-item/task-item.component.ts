@@ -7,9 +7,16 @@ import { TasksService } from 'src/app/services/tasks.service';
   styleUrls: ['./task-item.component.scss'],
 })
 export class TaskItemComponent {
-  constructor(public taskService: TasksService) {}
-
   @ViewChild('item') itemRef!: ElementRef;
+
+  constructor(public taskService: TasksService) {
+    taskService.isEdit$.subscribe((val) => {
+      if (val) {
+      } else {
+        this.itemRef?.nativeElement.classList.remove('active');
+      }
+    });
+  }
 
   @Input() task!: string;
   @Input() id!: number;
@@ -19,13 +26,9 @@ export class TaskItemComponent {
   }
 
   editTask(id: number): void {
-    console.log(this.taskService.isEdit);
-    console.log(this.taskService.isEdit$.subscribe((val) => val));
-
-    if (!this.taskService.isEdit$) {
+    if (!this.taskService.isEdit$.value) {
       this.taskService.editTask(id);
       this.itemRef.nativeElement.classList.add('active');
-      // this.onEdit.emit(id);
     }
   }
   getTitle(task: string): string {

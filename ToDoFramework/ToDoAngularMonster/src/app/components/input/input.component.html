@@ -14,7 +14,10 @@
   <p>
     {{ taskService.isEdit$ | async }}
   </p> -->
-  <div class="closeBtn" *ngIf="isEdit$ | async">
+  <p>
+    {{ taskService.isEdit$ | async }}
+  </p>
+  <div class="closeBtn" *ngIf="taskService.isEdit$ | async">
     <button
       class="btn btn-danger"
       title="Отменить редактирование"
