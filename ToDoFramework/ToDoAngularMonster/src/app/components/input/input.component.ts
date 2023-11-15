@@ -1,12 +1,6 @@
-import {
-  Output,
-  Component,
-  ElementRef,
-  Input,
-  OnChanges,
-  ViewChild,
-  EventEmitter,
-} from '@angular/core';
+import { Component, ElementRef, OnChanges, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
+import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
   selector: 'app-input',
@@ -14,39 +8,32 @@ import {
   styleUrls: ['./input.component.scss'],
 })
 export class InputComponent implements OnChanges {
-  @Input() tasks!: Array<string>;
-  @Input() editedTaskId!: number;
-
-  @Output('finishEdit')
-  finishEdit: EventEmitter<number> = new EventEmitter<number>();
-
   @ViewChild('input') inputRef!: ElementRef;
 
   newTask = '';
   btnText = 'Добавить';
+  isEdit$: Observable<boolean>;
+  constructor(public taskService: TasksService) {
+    this.isEdit$ = taskService.isEdit;
+  }
 
   ngOnChanges(): void {
-    if (this.editedTaskId >= 0) {
+    if (this.taskService.isEdit) {
       this.btnText = 'Обновить';
-      this.inputRef.nativeElement.value = this.tasks[this.editedTaskId];
+      this.inputRef.nativeElement.value = this.taskService.getEditedTask();
       this.inputRef.nativeElement.focus();
     }
   }
 
   addTask(): void {
     if (this.btnText === 'Добавить') {
-      //add task
-      if (this.newTask.trim() && !this.tasks.includes(this.newTask)) {
-        this.tasks.push(this.newTask.trim());
-      }
+      this.taskService.addTask(this.newTask);
     } else {
       //update task
-      if (this.newTask.trim()) {
-        this.tasks[this.editedTaskId] = this.newTask.trim();
-      }
+      this.taskService.updateTask(this.newTask);
       this.btnText = 'Добавить';
-      this.finishEdit.emit();
       this.inputRef.nativeElement.blur();
+      this.taskService.changeIsEdit();
     }
     this.newTask = '';
   }
@@ -54,7 +41,7 @@ export class InputComponent implements OnChanges {
   cancelEdit(): void {
     this.btnText = 'Добавить';
     this.inputRef.nativeElement.value = '';
-    this.finishEdit.emit();
     this.inputRef.nativeElement.blur();
+    this.taskService.changeIsEdit();
   }
 }

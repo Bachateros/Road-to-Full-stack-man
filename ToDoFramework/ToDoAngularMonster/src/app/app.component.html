@@ -1,17 +1,8 @@
 <div class="root">
   <app-header></app-header>
   <main class="main p-3">
-    <app-input
-      [tasks]="tasks"
-      [editedTaskId]="editedTaskId"
-      (finishEdit)="editedTaskId = -1"
-    ></app-input>
+    <app-input></app-input>
 
-    <app-task-list
-      class="m-3"
-      [(ngModel)]="tasks"
-      (editedTask)="editTask($event)"
-      [isEdit]="editedTaskId >= 0 ? true : false"
-    ></app-task-list>
+    <app-task-list class="m-3"></app-task-list>
   </main>
 </div>

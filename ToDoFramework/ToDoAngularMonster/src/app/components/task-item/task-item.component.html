@@ -1,0 +1,21 @@
+<input
+  type="checkbox"
+  class="align-self-center form-check-input me-1"
+  (click)="checkTask()"
+/>
+<div class="ms-2 me-auto" (click)="editTask(id)" #item>
+  <div class="fw-bold mb-2 h5">{{ getTitle(task) | uppercase }}</div>
+  {{ task }}
+</div>
+<button
+  (click)="editTask(id)"
+  class="btn badge bg-warning text-dark rounded-pill align-self-center mx-2"
+>
+  <i class="bi bi-pencil"></i>
+</button>
+<button
+  (click)="deleteTask(task)"
+  class="btn badge bg-danger text-white rounded-pill align-self-center mx-1"
+>
+  <i class="bi bi-x-square"></i>
+</button>

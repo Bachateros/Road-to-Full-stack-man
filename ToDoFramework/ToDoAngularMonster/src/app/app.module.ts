@@ -6,6 +6,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { InputComponent } from './components/input/input.component';
 import { FormsModule } from '@angular/forms';
 import { TaskListComponent } from './components/task-list/task-list.component';
+import { TasksService } from './services/tasks.service';
+import { TaskItemComponent } from './components/task-item/task-item.component';
 
 @NgModule({
   declarations: [
@@ -13,9 +15,10 @@ import { TaskListComponent } from './components/task-list/task-list.component';
     HeaderComponent,
     InputComponent,
     TaskListComponent,
+    TaskItemComponent,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [TasksService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

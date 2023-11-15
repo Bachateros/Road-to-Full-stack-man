@@ -8,7 +8,13 @@
     placeholder="Захватить мир своими танцами"
     #input
   />
-  <div class="closeBtn" *ngIf="editedTaskId >= 0">
+  <!-- <p>
+    {{ taskService.isEdit | json }}
+  </p>
+  <p>
+    {{ taskService.isEdit$ | async }}
+  </p> -->
+  <div class="closeBtn" *ngIf="isEdit$ | async">
     <button
       class="btn btn-danger"
       title="Отменить редактирование"
