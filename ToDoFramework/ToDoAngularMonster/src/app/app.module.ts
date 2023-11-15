@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InputComponent } from './components/input/input.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TasksService } from './services/tasks.service';
 import { TaskItemComponent } from './components/task-item/task-item.component';
@@ -17,7 +17,7 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
     TaskListComponent,
     TaskItemComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [TasksService],
   bootstrap: [AppComponent],
 })

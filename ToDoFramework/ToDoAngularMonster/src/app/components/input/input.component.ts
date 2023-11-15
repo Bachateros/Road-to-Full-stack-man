@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { TasksService } from 'src/app/services/tasks.service';
 export class InputComponent {
   @ViewChild('input') inputRef!: ElementRef;
 
-  newTask = '';
+  newTask = new FormControl('');
   btnText = 'Добавить';
 
   constructor(public taskService: TasksService) {
@@ -25,22 +26,22 @@ export class InputComponent {
   }
 
   addTask(): void {
+    const newTask = this.newTask.value as string;
     if (this.btnText === 'Добавить') {
-      this.taskService.addTask(this.newTask);
+      this.taskService.addTask(newTask);
     } else {
       //update task
-      this.taskService.updateTask(this.newTask);
+      this.taskService.updateTask(newTask);
       this.taskService.changeIsEdit();
-      this.inputRef.nativeElement.value = '';
       this.inputRef.nativeElement.blur();
     }
-    this.newTask = '';
+    this.newTask.setValue('');
   }
 
   cancelEdit(): void {
     this.btnText = 'Добавить';
-    this.inputRef.nativeElement.value = '';
     this.inputRef.nativeElement.blur();
     this.taskService.changeIsEdit();
+    this.newTask.setValue('');
   }
 }

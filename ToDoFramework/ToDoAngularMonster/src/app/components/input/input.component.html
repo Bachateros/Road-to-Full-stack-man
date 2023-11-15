@@ -3,7 +3,7 @@
   <input
     type="text"
     class="form-control"
-    [(ngModel)]="newTask"
+    [formControl]="newTask"
     (keydown.enter)="addTask()"
     placeholder="Захватить мир своими танцами"
     #input
