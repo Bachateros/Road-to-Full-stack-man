@@ -41,6 +41,3 @@ export class TaskItemComponent {
     this.itemRef.nativeElement.classList.toggle('checked');
   }
 }
-//     this.listRef.nativeElement.children[this.editID].classList.remove(
-// 'active'
-// );

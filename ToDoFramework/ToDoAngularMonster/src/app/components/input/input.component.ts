@@ -30,9 +30,9 @@ export class InputComponent {
     } else {
       //update task
       this.taskService.updateTask(this.newTask);
-      this.btnText = 'Добавить';
-      this.inputRef.nativeElement.blur();
       this.taskService.changeIsEdit();
+      this.inputRef.nativeElement.value = '';
+      this.inputRef.nativeElement.blur();
     }
     this.newTask = '';
   }

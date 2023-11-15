@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, take } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -16,35 +16,27 @@ export class TasksService {
       this.tasks.push(newTask.trim());
     }
   }
-  updateTask(newTask: string, id?: number) {
+  updateTask(newTask: string) {
     //update task
-    let editId: number = -1;
-    if (typeof id === undefined) {
-      editId = this.tasks.indexOf(newTask);
-    } else {
-      editId = id!;
-    }
     if (newTask.trim()) {
-      this.tasks[editId] = newTask.trim();
+      this.tasks[this.editedTaskId] = newTask.trim();
     }
   }
   editTask(id: number): void {
     this.editedTaskId = id;
-    console.log('edit');
-
     this.changeIsEdit();
-    // this.isEdit = true;
   }
   deleteTask(task: string): void {
     this.tasks = this.tasks.filter((el) => el != task);
   }
+  changeIsEdit(): void {
+    this.isEdit$.next(!this.isEdit$.value);
+  }
+
   getTasks(): Array<string> {
     return this.tasks;
   }
   getEditedTask(): string {
     return this.tasks[this.editedTaskId];
-  }
-  changeIsEdit(): void {
-    this.isEdit$.next(!this.isEdit$.value);
   }
 }

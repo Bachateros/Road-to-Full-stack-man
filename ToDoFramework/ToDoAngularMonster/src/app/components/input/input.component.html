@@ -8,15 +8,6 @@
     placeholder="Захватить мир своими танцами"
     #input
   />
-  <!-- <p>
-    {{ taskService.isEdit | json }}
-  </p>
-  <p>
-    {{ taskService.isEdit$ | async }}
-  </p> -->
-  <p>
-    {{ taskService.isEdit$ | async }}
-  </p>
   <div class="closeBtn" *ngIf="taskService.isEdit$ | async">
     <button
       class="btn btn-danger"
