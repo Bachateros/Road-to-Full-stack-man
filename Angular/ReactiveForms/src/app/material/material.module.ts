@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
-const MaterialComponents = [MatInputModule];
+const materialComponent = [MatInputModule, MatFormFieldModule];
 
 @NgModule({
-  imports: [MaterialComponents],
-  exports: [MaterialComponents],
+  imports: [materialComponent],
+  exports: [materialComponent],
 })
 export class MaterialModule {}
