@@ -3,7 +3,12 @@
   max-width: 500px;
   width: 100%;
 }
-
-.example-full-width {
-  width: 100%;
+.container {
+  padding: 40px;
+}
+mat-card-header {
+  margin-bottom: 20px;
+}
+.button {
+  margin-top: 50px;
 }

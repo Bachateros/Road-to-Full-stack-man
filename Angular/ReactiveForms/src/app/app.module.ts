@@ -5,9 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './form/form.component';
+import { AccountFormComponent } from './form/formComponents/account-form/account-form.component';
+import { ContactsFormComponent } from './form/formComponents/contacts-form/contacts-form.component';
+import { ProfileFormComponent } from './form/formComponents/profile-form/profile-form.component';
+import { CompanyFormComponent } from './form/formComponents/company-form/company-form.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent],
+  declarations: [AppComponent, FormComponent, AccountFormComponent, ContactsFormComponent, ProfileFormComponent, CompanyFormComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
