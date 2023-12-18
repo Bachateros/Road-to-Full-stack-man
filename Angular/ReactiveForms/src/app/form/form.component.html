@@ -9,7 +9,13 @@
       <app-profile-form />
       <app-company-form />
       <app-contacts-form />
-      <button class="button" type="submit" mat-raised-button color="primary">
+      <button
+        [disabled]="invalid()"
+        class="button"
+        type="submit"
+        mat-raised-button
+        color="primary"
+      >
         Sign Up
       </button>
     </form>

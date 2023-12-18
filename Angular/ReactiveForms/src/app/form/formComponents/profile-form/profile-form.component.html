@@ -1,1 +1,57 @@
-<p>profile-form works!</p>
+<h2>Profile</h2>
+<form [formGroup]="profileForm">
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input
+      type="text"
+      matInput
+      required
+      formControlName="nameControl"
+      placeholder="Ex. pat@example.com"
+    />
+    <mat-error *ngIf="profileForm.get('nameControl')!.hasError('required')"
+      >Email is <strong>required</strong></mat-error
+    >
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Phone</mat-label>
+    <input
+      type="tel"
+      matInput
+      required
+      formControlName="phoneControl"
+      placeholder="8(800) 555 3535"
+      mask="0(000) 000 0000"
+    />
+    <pre>
+        {{ profileForm.get("phoneControl")!.errors | json }}
+    </pre>
+    <mat-error
+      *ngIf="
+        profileForm.get('phoneControl')!.hasError('minlength') &&
+        !profileForm.get('phoneControl')!.hasError('required')
+      "
+      >Password must be more than
+      {{
+        profileForm.get("phoneControl")!.errors!["minlength"].requiredLength
+      }}</mat-error
+    >
+
+    <mat-error *ngIf="profileForm.get('phoneControl')!.hasError('required')"
+      >Password is <strong>required</strong></mat-error
+    >
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>City</mat-label>
+    <input
+      type="text"
+      matInput
+      required
+      formControlName="cityControl"
+      placeholder="Ex. pat@example.com"
+    />
+    <mat-error *ngIf="profileForm.get('cityControl')!.hasError('required')"
+      >Confirm password is <strong>required</strong></mat-error
+    >
+  </mat-form-field>
+</form>
