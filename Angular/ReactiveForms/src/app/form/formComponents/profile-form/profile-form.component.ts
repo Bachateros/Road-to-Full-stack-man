@@ -12,7 +12,4 @@ export class ProfileFormComponent {
     phoneControl: new FormControl('', [Validators.required]),
     cityControl: new FormControl('', Validators.required),
   });
-  // niceError(number:number){
-
-  // }
 }
