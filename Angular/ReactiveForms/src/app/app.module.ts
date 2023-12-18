@@ -9,17 +9,27 @@ import { AccountFormComponent } from './form/formComponents/account-form/account
 import { ContactsFormComponent } from './form/formComponents/contacts-form/contacts-form.component';
 import { ProfileFormComponent } from './form/formComponents/profile-form/profile-form.component';
 import { CompanyFormComponent } from './form/formComponents/company-form/company-form.component';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, AccountFormComponent, ContactsFormComponent, ProfileFormComponent, CompanyFormComponent],
+  declarations: [
+    AppComponent,
+    FormComponent,
+    AccountFormComponent,
+    ContactsFormComponent,
+    ProfileFormComponent,
+    CompanyFormComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
