@@ -9,11 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ProfileFormComponent {
   profileForm = new FormGroup({
     nameControl: new FormControl('', Validators.required),
-    phoneControl: new FormControl('', [
-      Validators.required,
-      Validators.maxLength(11),
-      Validators.pattern('^[0-9]+$'),
-    ]),
+    phoneControl: new FormControl('', [Validators.required]),
     cityControl: new FormControl('', Validators.required),
   });
   // niceError(number:number){
