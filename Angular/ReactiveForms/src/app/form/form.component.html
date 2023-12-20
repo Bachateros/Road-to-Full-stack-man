@@ -4,14 +4,120 @@
     <mat-card-subtitle>Fill all fields</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <form class="example-form" action="">
-      <app-account-form />
+    <form
+      class="example-form"
+      action=""
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+    >
+      <h2>Account</h2>
+      <div formGroupName="accountGroup">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            required
+            formControlName="emailFormControl"
+            placeholder="Ex. pat@example.com"
+          />
+
+          <mat-error
+            *ngIf="
+              form
+                .get('accountGroup')!
+                .get('emailFormControl')!
+                .hasError('email') &&
+              !form
+                .get('accountGroup')!
+                .get('emailFormControl')!
+                .hasError('required')
+            "
+            >Please enter a valid email address</mat-error
+          >
+
+          <mat-error
+            *ngIf="
+              form
+                .get('accountGroup')!
+                .get('emailFormControl')!
+                .hasError('required')
+            "
+            >Email is <strong>required</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            matInput
+            required
+            formControlName="passwordFormControl"
+            placeholder="qwerty123"
+          />
+          <mat-error
+            *ngIf="
+              form
+                .get('accountGroup')!
+                .get('passwordFormControl')!
+                .hasError('minlength') &&
+              !form
+                .get('accountGroup')!
+                .get('passwordFormControl')!
+                .hasError('required')
+            "
+            >Password must be more than
+            {{
+              form.get("accountGroup")!.get("passwordFormControl")!.errors![
+                "minlength"
+              ].requiredLength
+            }}</mat-error
+          >
+
+          <mat-error
+            *ngIf="
+              form
+                .get('accountGroup')!
+                .get('passwordFormControl')!
+                .hasError('required')
+            "
+            >Password is <strong>required</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Confirm password</mat-label>
+          <input
+            type="password"
+            matInput
+            required
+            formControlName="confirmPasswordFormControl"
+            placeholder="Ex. pat@example.com"
+          />
+          <mat-error
+            *ngIf="
+              form
+                .get('accountGroup')!
+                .get('confirmPasswordFormControl')!
+                .hasError('required')
+            "
+            >Confirm password is <strong>required</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-error
+          *ngIf="
+            form.get('accountGroup')?.errors?.['notSame'] &&
+            !form.get('accountGroup')!.get('confirmPasswordFormControl')!.hasError('required')
+          "
+        >
+          Passwords didn't match
+        </mat-error>
+      </div>
       <app-profile-form />
       <app-company-form />
       <app-contacts-form />
       <button
-        [disabled]="invalid()"
         class="button"
+        [disabled]="form.invalid"
         type="submit"
         mat-raised-button
         color="primary"
