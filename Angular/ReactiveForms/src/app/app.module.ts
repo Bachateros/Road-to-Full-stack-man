@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './form/form.component';
 import { ContactsFormComponent } from './form/formComponents/contacts-form/contacts-form.component';
-import { ProfileFormComponent } from './form/formComponents/profile-form/profile-form.component';
 import { CompanyFormComponent } from './form/formComponents/company-form/company-form.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
@@ -15,7 +14,6 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     AppComponent,
     FormComponent,
     ContactsFormComponent,
-    ProfileFormComponent,
     CompanyFormComponent,
   ],
   imports: [

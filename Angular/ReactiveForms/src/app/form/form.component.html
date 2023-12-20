@@ -5,13 +5,13 @@
   </mat-card-header>
   <mat-card-content>
     <form
-      class="example-form"
+      class="example-form form"
       action=""
       [formGroup]="form"
       (ngSubmit)="submit()"
     >
       <h2>Account</h2>
-      <div formGroupName="accountGroup">
+      <div class="form__account" formGroupName="accountGroup">
         <mat-form-field class="example-full-width">
           <mat-label>Email</mat-label>
           <input
@@ -112,9 +112,78 @@
           Passwords didn't match
         </mat-error>
       </div>
-      <!-- <app-profile-form />
-      <app-company-form />
-      <app-contacts-form /> -->
+      <div class="form__profile" formGroupName="profileGroup">
+        <h2>Profile</h2>
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input
+            type="text"
+            matInput
+            required
+            formControlName="profileNameControl"
+            placeholder="Gerasim"
+          />
+          <mat-error
+            *ngIf="
+              form
+                .get('profileGroup')!
+                .get('profileNameControl')!
+                .hasError('required')
+            "
+            >Name is <strong>required</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Phone</mat-label>
+          <input
+            type="tel"
+            matInput
+            required
+            formControlName="phoneControl"
+            placeholder="8(800) 555 3535"
+            mask="0(000) 000 0000"
+          />
+          <mat-error
+            *ngIf="
+              form.get('profileGroup')!.get('phoneControl')!.hasError('mask') &&
+              !form
+                .get('profileGroup')!
+                .get('phoneControl')!
+                .hasError('required')
+            "
+            >Enter full phone
+          </mat-error>
+
+          <mat-error
+            *ngIf="
+              form
+                .get('profileGroup')!
+                .get('phoneControl')!
+                .hasError('required')
+            "
+            >Phone is <strong>required</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>City</mat-label>
+          <input
+            type="text"
+            matInput
+            required
+            formControlName="cityControl"
+            placeholder="Saransk"
+          />
+          <mat-error
+            *ngIf="
+              form.get('profileGroup')!.get('cityControl')!.hasError('required')
+            "
+            >City is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form__company"></div>
+      <!-- <app-company-form />
+      <app-contacts-form />  -->
       <button
         class="button"
         [disabled]="form.invalid"

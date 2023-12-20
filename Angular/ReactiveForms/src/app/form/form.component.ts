@@ -30,9 +30,9 @@ export class FormComponent {
       { validators: MyValidators.checkPasswords }
     ),
     profileGroup: new FormGroup({
-      profileNameControl: new FormControl(''),
-      phoneControl: new FormControl(''),
-      cityControl: new FormControl(''),
+      profileNameControl: new FormControl('', Validators.required),
+      phoneControl: new FormControl('', Validators.required),
+      cityControl: new FormControl('', Validators.required),
     }),
     companyGroup: new FormGroup({
       companyNameControl: new FormControl(''),
