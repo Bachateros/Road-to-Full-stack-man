@@ -181,7 +181,186 @@
           >
         </mat-form-field>
       </div>
-      <div class="form__company"></div>
+      <div class="form__company" formGroupName="companyGroup">
+        <h2>Company</h2>
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input
+            type="text"
+            matInput
+            required
+            formControlName="companyNameControl"
+            placeholder="OAO 'Beer Trust'"
+          />
+          <mat-error
+            *ngIf="
+              form
+                .get('companyGroup')!
+                .get('companyNameControl')!
+                .hasError('required')
+            "
+            >Name is <strong>required</strong></mat-error
+          >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Ownership</mat-label>
+          <mat-select formControlName="ownershipControl" name="ownership">
+            <mat-option (click)="setKPPControl()" value="indiv">ИП</mat-option>
+            <mat-option (click)="clearKPPControl()" value="law"
+              >Юр. лицо</mat-option
+            >
+          </mat-select>
+          <mat-error
+            *ngIf="
+              form.get('companyGroup')!.get('ownershipControl')?.touched &&
+              !form.get('companyGroup')!.get('ownershipControl')!.value
+            "
+            >Ownership is <strong>required</strong></mat-error
+          >
+        </mat-form-field>
+        <div *ngIf="form.get('companyGroup')!.get('ownershipControl')!.value">
+          <mat-form-field class="example-full-width">
+            <mat-label>ИНН</mat-label>
+            <input
+              type="number"
+              matInput
+              required
+              formControlName="INNControl"
+              placeholder="123456789"
+              mask="000000000"
+            />
+            <mat-error
+              *ngIf="
+                form
+                  .get('companyGroup')!
+                  .get('INNControl')!
+                  .hasError('notExact') &&
+                !form
+                  .get('companyGroup')!
+                  .get('INNControl')!
+                  .hasError('required')
+              "
+              >Enter full INN</mat-error
+            >
+            <mat-error
+              *ngIf="
+                form
+                  .get('companyGroup')!
+                  .get('INNControl')!
+                  .hasError('required')
+              "
+              >INN is <strong>required</strong></mat-error
+            >
+          </mat-form-field>
+          <mat-form-field
+            class="example-full-width"
+            *ngIf="
+              form.get('companyGroup')!.get('ownershipControl')!.value === 'law'
+            "
+          >
+            <mat-label>КПП</mat-label>
+            <input
+              type="text"
+              matInput
+              required
+              formControlName="KPPControl"
+              placeholder="1234567z9"
+            />
+            <mat-error
+              *ngIf="
+                form
+                  .get('companyGroup')!
+                  .get('KPPControl')!
+                  .hasError('notExact') &&
+                !form
+                  .get('companyGroup')!
+                  .get('KPPControl')!
+                  .hasError('required')
+              "
+              >Enter correct KPP</mat-error
+            >
+            <mat-error
+              *ngIf="
+                form
+                  .get('companyGroup')!
+                  .get('KPPControl')!
+                  .hasError('required')
+              "
+              >KPP is <strong>required</strong></mat-error
+            >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>ОКПО</mat-label>
+            <input
+              type="number"
+              matInput
+              required
+              formControlName="OKPOControl"
+              placeholder="123456789"
+              mask="000000000"
+            />
+            <mat-error
+              *ngIf="
+                form
+                  .get('companyGroup')!
+                  .get('OKPOControl')!
+                  .hasError('notExact') &&
+                !form
+                  .get('companyGroup')!
+                  .get('OKPOControl')!
+                  .hasError('required')
+              "
+              >Enter full OKPO</mat-error
+            >
+            <mat-error
+              *ngIf="
+                form
+                  .get('companyGroup')!
+                  .get('OKPOControl')!
+                  .hasError('required')
+              "
+              >OKPO is <strong>required</strong></mat-error
+            >
+          </mat-form-field>
+        </div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="dateControl"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <pre>
+        {{ form.get("companyGroup")!.get("dateControl")!.value | json }}
+    </pre
+          >
+          <mat-error
+            *ngIf="
+              form
+                .get('companyGroup')!
+                .get('dateControl')
+                ?.hasError('required') &&
+              form.get('companyGroup')!.get('dateControl')!.pristine
+            "
+            >Date is <strong>required</strong></mat-error
+          >
+          <mat-error
+            *ngIf="
+              form
+                .get('companyGroup')!
+                .get('dateControl')
+                ?.hasError('matDatepickerParse') ||
+              form.get('companyGroup')!.get('dateControl')!.dirty
+            "
+            >Enter <strong>correct</strong> date</mat-error
+          >
+        </mat-form-field>
+      </div>
       <!-- <app-company-form />
       <app-contacts-form />  -->
       <button

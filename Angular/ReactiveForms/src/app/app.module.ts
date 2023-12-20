@@ -5,17 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormComponent } from './form/form.component';
-import { ContactsFormComponent } from './form/formComponents/contacts-form/contacts-form.component';
-import { CompanyFormComponent } from './form/formComponents/company-form/company-form.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FormComponent,
-    ContactsFormComponent,
-    CompanyFormComponent,
-  ],
+  declarations: [AppComponent, FormComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

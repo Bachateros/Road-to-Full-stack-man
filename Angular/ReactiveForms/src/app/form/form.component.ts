@@ -35,9 +35,18 @@ export class FormComponent {
       cityControl: new FormControl('', Validators.required),
     }),
     companyGroup: new FormGroup({
-      companyNameControl: new FormControl(''),
-      ownershipControl: new FormControl(''),
-      dateControl: new FormControl(''),
+      companyNameControl: new FormControl('', Validators.required),
+      ownershipControl: new FormControl('', Validators.required),
+      INNControl: new FormControl('', MyValidators.INNLength),
+      KPPControl: new FormControl('000000000', MyValidators.INNLength),
+      OKPOControl: new FormControl('', MyValidators.INNLength),
+      dateControl: new FormControl('', Validators.required),
     }),
   });
+  clearKPPControl() {
+    this.form.get('companyGroup')?.get('KPPControl')?.setValue('');
+  }
+  setKPPControl() {
+    this.form.get('companyGroup')?.get('KPPControl')?.setValue('000000000');
+  }
 }
