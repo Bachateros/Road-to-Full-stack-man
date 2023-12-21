@@ -335,10 +335,6 @@
             [for]="picker"
           ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
-          <pre>
-        {{ form.get("companyGroup")!.get("dateControl")!.value | json }}
-    </pre
-          >
           <mat-error
             *ngIf="
               form
@@ -361,8 +357,85 @@
           >
         </mat-form-field>
       </div>
-      <!-- <app-company-form />
-      <app-contacts-form />  -->
+      <div class="form__contacts contacts" formArrayName="contactsArray">
+        <div class="contacts__header">
+          <h2>Contacts</h2>
+          <button type="button" mat-stroked-button (click)="addContact()">
+            Add contact
+          </button>
+        </div>
+        <div
+          class="contacts__contact"
+          *ngFor="let contact of getContacts(); let idx = index"
+          [formGroupName]="idx"
+        >
+          <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input
+              type="text"
+              matInput
+              required
+              formControlName="contactNameControl"
+              placeholder="Vasiliy"
+            />
+            <mat-error
+              *ngIf="
+                getContacts()
+                  [idx].get('contactNameControl')!
+                  .hasError('required')
+              "
+              >Name is <strong>required</strong></mat-error
+            >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Post</mat-label>
+            <input
+              type="text"
+              matInput
+              required
+              formControlName="postControl"
+              placeholder="Team Leader"
+            />
+            <mat-error
+              *ngIf="
+                getContacts()[idx].get('postControl')!.hasError('required')
+              "
+              >Post is <strong>required</strong></mat-error
+            >
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Phone</mat-label>
+            <input
+              type="tel"
+              matInput
+              required
+              formControlName="contactPhoneControl"
+              placeholder="8(800) 555 3535"
+              mask="0(000) 000 0000"
+            />
+            <mat-error
+              *ngIf="
+                getContacts()
+                  [idx].get('contactPhoneControl')!
+                  .hasError('mask') &&
+                !getContacts()
+                  [idx].get('contactPhoneControl')!
+                  .hasError('required')
+              "
+              >Enter full phone
+            </mat-error>
+
+            <mat-error
+              *ngIf="
+                getContacts()
+                  [idx].get('contactPhoneControl')!
+                  .hasError('required')
+              "
+              >Phone is <strong>required</strong></mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
       <button
         class="button"
         [disabled]="form.invalid"

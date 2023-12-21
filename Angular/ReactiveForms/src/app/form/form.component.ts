@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyValidators } from '../my.validators';
 
 @Component({
@@ -42,7 +42,32 @@ export class FormComponent {
       OKPOControl: new FormControl('', MyValidators.INNLength),
       dateControl: new FormControl('', Validators.required),
     }),
+    contactsArray: new FormArray([]),
   });
+  addContact() {
+    // const contact = new FormGroup({
+    //   contactNameControl: new FormControl('', Validators.required),
+    //   postControl: new FormControl('', Validators.required),
+    //   contactPhoneControl: new FormControl('', Validators.required),
+    // });
+
+    const contactGroup = new FormGroup({
+      contactNameControl: new FormControl('', Validators.required),
+      postControl: new FormControl('', Validators.required),
+      contactPhoneControl: new FormControl('', Validators.required),
+    });
+    (<FormArray>this.form.get('contactsArray')).push(contactGroup);
+    // (<FormArray>this.form.get('contactsArray')).push(postControl);
+    // (<FormArray>this.form.get('contactsArray')).push(contactPhoneControl);
+    console.log('---------- ');
+    console.log(this.form.get('contactsArray'));
+    console.log('---------- ');
+
+    console.log((<FormArray>this.form.get('contactsArray')).controls);
+  }
+  getContacts() {
+    return (this.form.get('contactsArray') as FormArray).controls;
+  }
   clearKPPControl() {
     this.form.get('companyGroup')?.get('KPPControl')?.setValue('');
   }
