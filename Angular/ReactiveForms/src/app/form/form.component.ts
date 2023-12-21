@@ -45,25 +45,12 @@ export class FormComponent {
     contactsArray: new FormArray([]),
   });
   addContact() {
-    // const contact = new FormGroup({
-    //   contactNameControl: new FormControl('', Validators.required),
-    //   postControl: new FormControl('', Validators.required),
-    //   contactPhoneControl: new FormControl('', Validators.required),
-    // });
-
     const contactGroup = new FormGroup({
       contactNameControl: new FormControl('', Validators.required),
       postControl: new FormControl('', Validators.required),
       contactPhoneControl: new FormControl('', Validators.required),
     });
     (<FormArray>this.form.get('contactsArray')).push(contactGroup);
-    // (<FormArray>this.form.get('contactsArray')).push(postControl);
-    // (<FormArray>this.form.get('contactsArray')).push(contactPhoneControl);
-    console.log('---------- ');
-    console.log(this.form.get('contactsArray'));
-    console.log('---------- ');
-
-    console.log((<FormArray>this.form.get('contactsArray')).controls);
   }
   getContacts() {
     return (this.form.get('contactsArray') as FormArray).controls;
