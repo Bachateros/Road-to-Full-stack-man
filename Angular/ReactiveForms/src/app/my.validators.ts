@@ -8,7 +8,7 @@ export class MyValidators {
     return password === confirmPassword ? null : { notSame: true };
   }
   static INNLength(control: AbstractControl) {
-    if (control.value.length != 9) return { notExact: true };
+    if (control.value.toString().length != 9) return { notExact: true };
     return null;
   }
 }
